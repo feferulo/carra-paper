@@ -1,0 +1,27 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}CATEGORICAL PRELIMINARIES}{5}{section.1}
+\contentsline {subsection}{\numberline {1.1}Regular Categories}{5}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Multislice Categories of Regular Categories}{7}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Families of Functors With Common Domain}{10}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Weakly Projective Objects}{11}{subsection.1.4}
+\contentsline {section}{\numberline {2}PREFIBRED CATEGORIES}{12}{section.2}
+\contentsline {subsection}{\numberline {2.1}Basic Notions}{12}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Stability in a Prefibration}{14}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Reflection properties in a prefibration}{21}{subsubsection.2.2.1}
+\contentsline {subsection}{\numberline {2.3}Two facts about epimorphisms in a prefibration}{22}{subsection.2.3}
+\contentsline {section}{\numberline {3}COLIMIT OF A FIBRATION WITH COFILTERED BASE}{22}{section.3}
+\contentsline {subsection}{\numberline {3.1}Colimit of a finitely complete fibration}{24}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Colimit of a Regular Fibration}{28}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Colimit of a Conservative Fibration Over $\mathcal {A}$}{32}{subsection.3.3}
+\contentsline {section}{\numberline {4}CONSTRUCTION OF A REGULAR SET VALUED FUNCTOR THAT IS CONSERVATIVE OVER MONICS WITH GLOBALLY SUPPORTED CODOMAIN FOR ANY REGULAR CATEGORY $\mathcal {A}$ THAT POSSESSES A DISTINGUISHED TERMINAL OBJECT}{34}{section.4}
+\contentsline {subsection}{\numberline {4.1}Construction of the Functor from $\mathcal {A}$ to $\mathcal {A'}$ That Sends Globally Supported Objects into Objects That Have a Generic Global Section}{34}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}A fibration that has $\mathcal {A}$ as its fibres}{34}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Construction of the colimit $\mathcal {A'}$ of the fibration and proof that including the first fibre is conservative over monics with globally supported codomain}{37}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Construction of $\mathcal {A}^{\infty }$ Where 1 is Weakly Projective}{39}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}A new fibration that has $\mathcal {A}$ as its first fibre, proof that the inclusion of any fibre into the colimit $\mathcal {A}^{\infty }$ is conservative over monics with globally supported codomain and $1 \in \mathcal {A}^{\infty }$ is weakly projective }{39}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}The representable functor of $1 \in \mathcal {A}^{\infty }$ is conservative over monics with globally supported codomain}{40}{subsubsection.4.2.2}
+\contentsline {section}{\numberline {5}REDUCTIONS}{40}{section.5}
+\contentsline {subsection}{\numberline {5.1}A Regular Functor That is Conservative Over Monics With Globally Supported Codomain Suffices}{40}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Pullback functor along a monomorphism}{41}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}The result}{43}{subsubsection.5.1.2}
+\contentsline {subsection}{\numberline {5.2}From a Family $\{h_S\}$ to $h$}{43}{subsection.5.2}

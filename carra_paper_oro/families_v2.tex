@@ -1,0 +1,121 @@
+\subsection{Regular Categories}
+We will denote with $\cc{C}at$ the category of small categories, 
+and $\cc{E}ns$ the category of sets. 
+
+Let $\cc{C}$ be a small category.  In what follows all the diagrams are in 
+$\cc{C}$.
+
+\vspace{1ex}
+
+Recall the notion of \emph{strict epimorphism} introduced in 
+SGA4 \cite{sga4}[10.3, p. 180].
+
+%\cite{[sga4, 10.3, p. 180]} \
+
+\vspace{1ex}
+
+\begin{definition}
+Given a morphism ${X \mr{f} }Y$,  a morphism ${X \mr{g} Z }$  is \emph{compatible} if for every pair ${Z \mrpair{x}{y} X}$ such that 
+${fx=fy}$ it follows that ${gx=gy}$.
+
+\noindent A morphism ${X \mr{f} Y}$ is a \emph{strict epimorphism} if for every compatible 
+${X \mr{g} Z}$,  there exists a unique ${Y \mr{h} Z }$ such that 
+$h \circ f = g$.
+The situation is described in a diagram:
+
+\vspace{-1ex}
+
+% where the 
+%family $g_{\alpha}$ is compatible with the family $f_{\alpha}$:
+%$$        
+%x\ymatrix@1
+%        {
+%         X _{\alpha} \;\; \ar @<+2pt> `u[r] `[rr]^{g_{\alpha}} [rr]
+%                                             \ar[r]^{f_{\alpha}} 
+%         & \;\;X\;\;  \ar@{-->}[r]^{\exists ! g} 
+%         & \;\;Y      
+%        }
+%$$
+
+$$        
+\xymatrix@1
+        {
+         X \;\; \ar @<+2pt> `u[r] `[rr]^{\forall \,  g \; compatible} [rr]
+                 \ar[r]^{f} 
+         & \;\;Y\;\;  \ar@{-->}[r]^{\exists \, ! \,  h} 
+         & \;\;Z      
+        }
+$$
+\end{definition}
+
+%\noindent We will use the symbol $\xymatrix{ \ar @{->>} [r] & }$ to label strict epimorphisms.
+
+
+A morphism ${X \mr{f} Y }$ is a monomorphism precisely when  $id_X$ is compatible. Strict epimorphisms are epimorphisms,   
+if ${X \mr{f} Y}$ is a monomorphism  and a strict epimorphism, then it is an isomorphism. Strict epimorphisms do not compose in general. 
+
+\begin{remark}\label{kernelpair}
+For any arrow $X \mr{f} Y$, let $R_f \mrpair{}{} X$ be a kernel pair of $f$.
+Then $f$ is a strict epimorphism if and only if the diagram 
+$R_f \mrpair{}{} X \mr{f} Y$ 
+is a coequalizer.
+It follows that when pullbacks exists \emph{a functor that preserves pull-backs and coequalizers preserves strict epimorphisms.}
+\end{remark}
+%\end{document}
+
+\vspace{1ex}
+
+Recall the definition of regular category:
+\begin{definition} \label{regular}
+A category is \emph{regular} if it has finite limits, any arrow can be factorized into a monomorphism
+composed with an  strict epimorphism, and strict
+epimorphisms  are universal.
+\end{definition}
+
+
+\begin{remark} \label{regular2}
+Given $X \mr{f} Y \mr{g} Z$ in a regular category, the following holds:
+
+1) If $f$ and $g$ are strict epimorphisms, so it is the composite 
+$g \circ f$.
+
+2) If the composite $g \circ f$ is a strict epimorphisms, so it is $g$.
+\end{remark}
+
+%\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%% COMMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{comment}      
+We will denote $\cc{C}at_{fl}$ the subcategory of $\cc{C}at$ whose objects are finitely complete categories and whose morphisms are limit-preserving functors. Recall that limit preserving functors preserve monomorphisms
+
+\vspace{1ex}
+
+We will denote $\cc{R}eg$ the subcategory of $\cc{C}at$ whose objects are regular categories and whose morphisms are limit-preserving functors that preserve strict factorizations. We call the morphisms in $\cc{R}eg$ \textit{regular} functors.   $\cc{R}eg$ is in fact a subcategory of  
+$\cc{C}at_{fl}$.
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{definition}
+A functor between regular categories is a \emph{regular functor} if it preserves finite limits (hence it preserves monics) and either one of the two following equivalent conditions hold:
+
+1) $F$ preserves strict factorizations.
+
+2) $F$ preserves strict epimorphisms.
+\end{definition}
+
+\begin{definition} \label{globally supported}
+An object $X$ is \emph{of global support} if for all terminal objects the morphism $X \mr{} 1$ is a strict epimorphism, or, equivalently, if there exists a terminal object such that the morphism $X \mr{} 1$ is a strict epimorphism.
+\end{definition}
+
+\begin{proposition}
+A finite product is an object of global support if and only if each factor is of global support. Furthermore, the projections are strict epimorphisms.
+\end{proposition}
+\begin{proof}
+For a binary product the statement follows immediately from 
+\ref{regular} and \ref{regular2}. Then proceed by induction.
+\end{proof}
+
+
+
+
+
+

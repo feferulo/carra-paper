@@ -1,0 +1,76 @@
+\subsection{Construction of $\cc{A}^{\infty}$ Where 1 is Weakly Projective}
+
+
+
+\subsubsection{A new fibration that has $\cc{A}$ as its first fibre, proof that the inclusion of any fibre into the colimit $\cc{A}^{\infty}$ is conservative over monics with globally supported codomain and $1 \in \cc{A}^{\infty}$ is weakly projective } \label{A infinito}
+
+Iterating the construction in Section \ref{thee fibration} we obtain the following sequence of regular functors.
+
+
+\[
+\xymatrix{\cc{A} \ar[r]^{j} & \cc{A'} \ar[r]^{j'} & \cc{(A')'} \ar@{-}[r] & \cdots }
+\]
+
+\noindent Using the dual construction  in \ref{grothendieck construction} we obtain from this diagram  a split regular fibration $\cc{E} \mr{\cc{F}} {\cc{N}_0}^{op}$ whose base is cofiltered. $\cc{A}^{(n)}$ will denote the fiber over $n$ and $j_n$ the $(n+1)^{th}$ functor of the diagram. We will make the same identification between $j_n$ and the transfer functor along $n+1 \mr{} n$. The hypothesis of Theorem \ref{colimit of regular fibrations is regular} are satisfied and it follows that the colimit of this fibration $\cc{A}^\infty$ is a  regular category and the morphisms ${\cc{A}^{(n)} \mr{J_n} \cc{A}^\infty}$ are regular.
+
+\begin{remark}
+The functors $j_n$ preserve monics with globally supported codomain and are conservative over them (see \ref{delta separa a B de sus subobjetos}). It follows that the fibration is conservative over vertical monics with globally supported codomain.
+\end{remark}
+
+\begin{corollary}\label{reflejans isos que son monoss}
+The functors ${\cc{A}^{(n)} \mr{J_n} \cc{A}^\infty}$ are conservative over monics with globally supported codomain.
+\end{corollary}
+
+\begin{proof}
+See \ref{colimit of conservative fibration}.
+\end{proof}
+
+
+\begin{proposition}\label{se reflejan objetos con soporte global}
+The functors $\cc{A}^{(n)} \mr{J_n} \cc{A}^\infty$ reflect globally suported objects.
+\end{proposition}
+
+\begin{proof}
+Let $X \in cc{A}^{(n)}$ be such that $J_n(X)$ has global support in $\cc{A}^\infty$.  Take a strict epic-monic factorization of $X \mr{f} 1$ in $\cc{A}^{(n)}$.
+
+\[
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix{X \ar[rr]^f \ar@{->>}[dr]_e && 1    \\
+		   & S \ar@{(>->}[ur]_m \ar@{}[u]|(.6)\equiv &  }
+\]
+
+Since $J_n(f)$ and $J_n(e)$ are strict epimorphisms, it follows that $J_n(m)$ is an isomorphism. Corollary \ref{reflejans isos que son monoss} guarantees that $m$ is an isomorphism. The result follows.
+\end{proof}
+
+\begin{remark}\label{una flecha es isomorfa a su imagen}
+For $A \mr{f} B$ in ${\cc{A}^{(n)}}$, $j_{n}(A) \mr{j_{n}(f)} j_{n}(B)$ is a transfer of $f$ along ${n+1 \mr{} n}$.
+\end{remark}
+
+\begin{theorem}
+1 is weakly projective in $\cc{A}^\infty$.
+\end{theorem}
+
+\begin{proof}
+Let $B \in \cc{A}^\infty$ be a globally supported object. Because of Proposition \ref{se reflejan objetos con soporte global} it is globally supported in the fiber over $n=\cc{F}(B)$. Since $j_{n}(B)$ is isomorphic to $B$ in $\cc{A}^\infty$ (\ref{una flecha es isomorfa a su imagen}) and we have the generic section $1 \mr{\Delta_B} j_{\cc{A}^{(n)}}(B)$, the result follows. 
+\end{proof}
+
+
+\subsubsection{The representable functor of $1 \in \cc{A}^{\infty}$ is conservative over monics with globally supported codomain}
+
+
+\begin{theorem} \label{obtuvimos un modelo loco}
+ 
+The functor $\cc{A}^\infty \mr{[1,\_]} \cc{E}ns$ is conservative over monics with globally supported codomain. In particular we have constructed a functor $\cc{A} \mr{J_0} \cc{A}^\infty \mr{[1,\_]} \cc{E}ns$ that is conservative over monics with globally supported codomain.
+\end{theorem}
+
+\begin{proof}
+It suffices to prove that the regular functors $\cc{A}^{(n)} \mr{J_n} \cc{A}^\infty \mr{[1,\_]} \cc{E}ns$ are conservative over monics with globally supported codomain. Let $\Gamma$ represent the functor $[1,\_]$. We will use the abuse of notation of suppressing the symbol $J_k$ when it is clear that we are viewing an element of a fiber inside of $\cc{A}^\infty$. Let $A \mnr{m} B \in \cc{A}^{(n)}$ be monic with globally supported codomain in $\cc{A}^{(n)}$ such that $\Gamma(m)$ is an isomorphism (that is to say $\Gamma(J_n(m))$). Since $A \mnr{m} B$ is isomorphic to $j_{n}(A) \mnr{j_{n}(m)} j_{n}(B)$ in $\cc{A}^\infty$ (Remark \ref{una flecha es isomorfa a su imagen}) we have that $\Gamma(j_{n}(m))$ is an isomorphism, which in particular means that any section of $j_{n}(B) \mr{} 1$ lifts along $j_{n}(m)$ in $\cc{A}^\infty$. Take a pullback of $j_{n}(m)$ along $\Delta_B$ in $\cc{A}^{(n+1)}$.
+
+\[
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix @+4ex {j_{n}(A) \ar@{(>->}[r]^{j_{n}(m)} & j_{n}(B)  \\
+		  P \ar@{.>}[u]^{p_1} \ar@{}[ur]|{p.b.} \ar@{(>.>}[r]_{p_2} & 1 \ar[u]_{\Delta_B}}
+\]
+
+It suffices to prove that $p_2$ admits a section in $\cc{A}^{(n+1)}$. This diagram viewed in $\cc{A}^\infty$  is still a pullback and $p_2$ is still monic. Since $\Delta_B$ lifts along $j_{n}(m)$ in $\cc{A}^\infty$ we obtain a section of  $p_2$ in $\cc{A}^\infty$. Thus $p_2$ is an isomorphism in $\cc{A}^\infty$. Thus we conclude $p_2$ is an isomorphism in $\cc{A}^{(n+1)}$. The result follows.
+\end{proof}

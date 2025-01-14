@@ -1,0 +1,852 @@
+
+
+
+\section{PREFIBRED CATEGORIES}\label{fibrations}
+
+\subsection{Basic Notions}
+Let $\cc{G}$ be a category. We denote $\cc{C}at/{\cc{G}}$ the category whose objects are functors $\cc{E} \mr{F} \cc{G}$ and whose morphisms from ${\cc{E} \mr{F} \cc{G}}$ to $\cc{E'} \mr{F'} \cc{G}$ are  functors ${\cc{E} \mr{f} \cc{E'}}$ such that $F'f=F$.
+
+\begin{align*}
+\xymatrix{\cc{E} \ar[rr]^f \ar[dr]_F && \cc{E'} \ar[dl]^{F'} \\
+		   & \cc{G} \ar@{}[u]|\equiv }
+\end{align*}
+
+\noindent We will call $f$ a $\cc{G}$-functor and with an abuse of language we will denote with $hom_{\cc{G}}(\cc{E},\cc{E'})$ the set of $\cc{G}$-functors from $F$ to $F'$. 
+ 
+\begin{definition}%definicion de fibra
+For a functor $\cc{E} \mr{F} \cc{G}$ and $\alpha \in \cc{G}$, the \textbf{fibre} over $\alpha$ is the subcategory of $\cc{E}$ given by the preimage of $F$ of the punctual category defined by $\alpha$. That is the subcategory of $\cc{E}$ whose objects are  $X \in \cc{E}$ such that ${F(X)=\alpha}$ and morphisms  ${s \in \cc{E}}$ such that ${F(s)=id_\alpha}$. We will use $\cc{E}_\alpha$ to label this category.
+\end{definition}
+
+\begin{observation}
+A $\cc{G}$-functor induces functors between fibres. That is to say if ${f \in hom_{\cc{G}}(\cc{E},\cc{E'})}$  and $\alpha \in \cc{G}$, then $f$ sends $\cc{E}_\alpha$ into $\cc{E}'_\alpha$. We will use $\cc{E}_\alpha \mr{f_\alpha} \cc{E}'_\alpha$ to denote these restriction.
+\end{observation}
+
+For $\alpha \mr{\varphi} \beta$ in $\cc{G}$, $A  \in \cc{E}_\alpha$ and $B  \in \cc{E}_\beta$ we will denote with $hom_\varphi(A,B)$ the set of morphisms $s \in hom_{\cc{E}}(A,B)$ such that $F(s)=\varphi$. We will represent an element of this set with a double diagram. 
+
+\[
+\xymatrix{A \ar[r]^s & B \\
+		  \alpha \ar[r]^\varphi & \beta}		  
+\]
+
+\noindent We will refer to arrows in a fibre as \textit{vertical arrows}, and if an arrow is in $\cc{E}_\alpha$, we draw the arrow vertically above $\alpha$. We write $hom_\alpha$ instead of $hom_{id_\alpha}$. \\
+
+ For ${s \in hom_\varphi(A,B)}$, ${\gamma \mr{\psi} \alpha \mr{\varphi} \beta \in \cc{G}}$ and ${X \in \cc{E}_\gamma}$ we will use the notation ${hom_{\psi}(X,A) \mr{s_*} hom_{\varphi \psi}(X,B)}$ to indicate the function defined by postcomposing with $s$.
+ 
+ 
+ 
+\[
+\xymatrix{ X \ar@/^/@{-->}[rrd]^{s_*(g)} \ar[rd]_{g}&& \\
+		    & A \ar@{}[u]|(.33){\equiv} \ar[r]_s  & B  \\
+		  \gamma \ar[r]_\psi & \alpha \ar[r]_\varphi & \beta}
+\]
+
+\begin{definition}%definicion de precartesiana
+For $s \in hom_\varphi(A,B)$ we say that $s$ is \textbf{cartesian} (or \textbf{ cartesian over $\varphi$}) if for every $X \in \cc{E}_\alpha$ the function 
+
+
+\[
+hom_\alpha(X,A) \mr{s_*} hom_\varphi(X,B)
+\]
+
+\noindent is a bijection. 
+
+\[
+\xymatrix{X \ar@/^/[dr]^{\forall} \ar@{-->}[d]_{\exists!} & \\
+		  A \ar@{}[ur]|(.4){\equiv} \ar[r]_s  & B  \\
+		  \alpha \ar[r]_\varphi & \beta}
+\]
+\end{definition}
+
+\begin{definition}%definicion de cartesiana 
+For $s \in hom_\varphi(A,B)$ we say that $s$ is \textbf{strong cartesian} (or \textbf{strong cartesian over $\varphi$}) if for every ${ \gamma \mr{\psi} \alpha\ \mr{\varphi} \beta \in \cc{G}}$ and for every ${ X \in \cc{E}_\gamma}$ the function
+
+
+\[
+hom_{\psi}(X,A) \mr{s_*} hom_{\varphi \psi}(X,B)
+\]	
+
+\noindent is a bijection.  
+
+\begin{align*}
+\xymatrix{ X \ar@/^/[rrd]^\forall \ar@{-->}[rd]_{\exists !}&& \\
+		    & A \ar@{}[u]|(.33){\equiv} \ar[r]_s  & B  \\
+		  \gamma \ar[r]_\psi & \alpha \ar[r]_\varphi & \beta}
+\end{align*}
+\end{definition}
+
+\begin{observation}
+If $s$ is strong cartesian, then $s$ is cartesian. 
+\end{observation}
+
+\begin{definition} % definicion de fibracion
+A functor $\cc{E} \mr{F} \cc{G}$ is \textbf{prefibred} if for every ${\alpha \mr{\varphi} \beta \in \cc{G}}$ and for every ${B \in \cc{E}_\beta}$ there exists a cartesian morphism over $\varphi$ with target $B$. A prefibred functor is \textbf{fibred} if the set of cartesian morphisms is closed under composition.
+\end{definition}
+
+
+\begin{remark}\label{cartesianas cerradas por composicion implican fibracion}
+Strong cartesian morphisms are closed under composition. In a fibration every cartesian morphism is strong cartesian.
+\end{remark}
+
+
+\begin{observation}
+ We have the dual definitions of cocartesian morphism and precofibration. We will freely use these notions and the dual theorems.
+\end{observation}
+
+\begin{definition}
+A functor $\cc{E} \mr{F} \cc{G}$ is said to be \textbf{cleaved} if we are provided with a set $K$ of cartesian morphisms that verifies that for  each pair ${\alpha \mr{\varphi} \beta\ \in \cc{G}}$ and $X \in \cc{E}_\beta$ there is a unique morphism $s \in K$ over $\varphi$ with target $X$.
+\end{definition}
+
+\begin{observation}
+Every cleaved functor is a prefibration. Using choice we have that every prefibration admits a clivage. We will not assume such a choice has been made.  
+\end{observation}
+ 
+\noindent Such a set $K$ is called a \textit{clivage} of the functor.
+
+ 
+
+\begin{definition}
+A cleaved prefibration $\cc{E} \mr{F} \cc{G}$ with clivage $K$ is \textbf{split} if the morphisms in  $K$ are closed under composition.
+\end{definition}
+
+
+\begin{observation}
+Every functor that admits a split clivage is a fibration. Not every fibration is split. Take as example a surjective group homomorphism $G \mr{f} H$. Interpreting the groups as punctual categories $f$ is a fibration. In fact every morphism is cartesian. Nevertheless this fibration is split if and only if $f$ admits a section \cite{sga1}.
+\end{observation}
+
+
+The category of prefibrations over $\cc{G}$ as the subcategory of $\cc{C}at/\cc{G}$ whose objects are prefibrations and whose morphisms are $\cc{G}$-functors that transform cartesian morfisms into cartesian morphisms. We call these morphisms \textit{cartesian} $\cc{G}$-functors and we will denote this category $Prefib(\cc{G})$. The category of fibrations over $\cc{G}$ is the full subcategory of $Prefib(\cc{G})$ whose objects are fibrations. We denote this category $Fib(\cc{G})$. We define the category of cleaved (split) prefibrations as the category whose objects are pairs ${(\cc{E} \mr{F} \cc{G},K)}$ where $K$ is a clivage for $F$ and whose morphisms are cartesian $\cc{G}$-functors that  preserve the clivages.  We will denote this category $Cprefib(\cc{G})$ ($Sprefib(\cc{G})$). Similar notations will be used for the categories of cleaved and split fibrations.
+
+
+\begin{remark}
+In a cleaved prefibration $(\cc{E} \mr{F} \cc{G},K)$ there is associated to ${\alpha \mr{\varphi} \beta \in \cc{G}}$ a functor ${\cc{E}_\beta \mr{\varphi^*} \cc{E}_\alpha}$ called the \textit{pullback functor} along $\varphi$ of the prefibration  determined by the diagram below where ${X \mr{m} Y \in \cc{E}_\beta}$ and ${s,t \in K }$.  
+
+
+\begin{align*}
+\xymatrix{\varphi^*X \ar[r]^{s} \ar@{-->}[d]_{\varphi^*(m)} & X \ar[d]^m \\
+		  \varphi^*Y \ar[r]_{t} & Y \ar@{}[ul]|\equiv \\
+		  \alpha \ar[r]^\varphi & \beta}
+\end{align*}
+
+\noindent For a general prefibration we will use a simpler version of this diagram notation to indicate we are labelling a cartesian morphism over $\varphi$ with target $X$. 
+
+\begin{align*}
+\xymatrix{X^* \ar[r] & X \\
+		  \alpha \ar[r]^\varphi & \beta }
+\end{align*}
+
+
+\noindent This variation in notation is done to remind us we are making a momentary choice of a single cartesian arrow and that we do not assume to have a clivage. We may also indicate this by saying  we have a cartesian morphism $X^* \mr{} X$  over $\varphi$.
+
+\end{remark}
+
+\begin{proposition}\label{cartes son cartes fuertes en una }
+If $F$ is a prefibred and cofibred, then $F$ is a fibration.
+\end{proposition}
+
+\begin{proof}
+We will prove that cartesian morphisms are strong cartesian (see Remark \ref{cartesianas cerradas por composicion implican fibracion}). Take $Y^* \mr{f} Y$ a cartesian morphisms over ${\alpha \mr{\varphi} \beta}$. Take ${\gamma \mr{\psi} \alpha \mr{\varphi} \beta \in \cc{G}}$ and $X \in \cc{E}_\gamma$. We will prove that ${hom_{\psi}(X,Y^*) \mr{f_*} hom_{\varphi \psi}(X,Y)}$ is a bijection. Take $X \mr{r} X_*$ a strong cocartesian morphism over $\psi$. The situation can be described as follows.
+
+
+\[
+\xymatrix @+6ex {X  \ar [r] ^r  \ar @/^6pc/ [rrd] ^{\forall}  \ar @{-->} [dr] _(.5){\exists ! c}  &  X_*  \ar @{} [r] |(.36)\equiv  \ar @{} [dl] |(.3)\equiv  \ar @{-->} [dr] ^(.45){\exists ! a}  \ar @{-->} [d] ^(.5){\exists ! b}  &  \\
+		             &  Y^*  \ar [r] _{f}  \ar @{} [ru] |(.3) {\equiv}  &  Y  \\
+		  \gamma  \ar [r] ^{\psi}  &  \alpha  \ar [r] ^{\varphi}  &  \beta}
+\]
+\noindent The arrow $c$ shows that $f$ is strong cartesian.  
+
+\vspace{2ex}
+
+For an alternative proof take the following commutative diagram.
+\[
+\xymatrix{{hom_{\psi}(X,Y^*)} \ar[r]^{f_*} \ar@{}[dr]|\equiv & {hom_{\varphi \psi}(X,Y)} 
+\\
+		  {hom_\alpha(X_*,Y^*)} \ar[r]_{f_*} \ar[u]^{r^*} & {hom_{\varphi}(X_*,Y)} \ar[u]_{r^*}	}	  
+\]
+\noindent The bottom arrow is bijective because $f$ is cartesian and the vertical arrows are bijections because $r$ is strong cocartesian. The result follows. 
+
+\end{proof}
+
+
+
+
+
+\subsection{Stability in a Prefibration}
+
+The following concepts are inspired in defining properties of the pullback functors of a cleaved prefibration without using clivages. Let $\cc{E} \mr{F} \cc{G}$ be a prefibration. 
+
+
+\subsubsection{Pulling back objects and arrows}
+
+ 
+\begin{definition}
+ A subset $\cc{A} \subset Ob(\cc{E})$ is \textbf{stable} if for every $X \in \cc{A}$ and any cartesian morphism $X^* \mr{} X$ it follows that $X^* \in \cc{A}$.
+\end{definition}
+
+If $X^* \mr{} X$ is cartesian over $\alpha \mr{\varphi} \beta$ we think of $X$  being \textit{pulled back} to $X^*$ along $\varphi$. We will call $X^*$ a \textit{pullback} of $X$ along $\varphi$. This means that $\cc{A}$ is stable when its objects are pulled back to objects of $\cc{A}$ exclusively.  
+
+\begin{remark}
+Stable subsets are closed under isomorphisms.
+\end{remark}
+
+\begin{definition}
+We will say that \textbf{terminal objects are stable}  if the set of terminal objects of the fibres is a stable set.
+\end{definition}
+
+\noindent That is to say  if $1_\beta$ is a terminal object of $\cc{E}_\beta$ and ${(1_\beta)^* \mr{} 1_\beta }$ is cartesian over $\alpha \mr{\varphi} \beta \in \cc{G}$, it follows that $(1_\beta)^*$ is terminal in $\cc{E}_\alpha$.
+
+\begin{observation}
+Vertical arrows can  be  pulled back  as follows. For ${X \mr{m} Y \in \cc{E}_\beta}$ choose two cartesian morphisms ${X^* \mr{} X}$ and ${Y^* \mr{s} Y}$ over $\alpha \mr{\varphi} \beta \in \cc{G}$. These determine an arrow in ${X^* \mr{m^*} Y^* \in\cc{E}_\alpha}$ given by $m^*$ in the following diagram.
+
+
+\[
+\xymatrix{X^* \ar[r] \ar@{-->}[d]_{\exists ! m^*} & X \ar[d]^{m} \\
+		  Y^* \ar[r]_s  & Y \ar@{}[ul]|\equiv  \\
+		  \alpha \ar[r]^{\varphi} & \beta}
+\]
+
+\noindent We call $m^*$ a \textit{pullback} of $m$ along $\varphi$. In a fibration the diagram on top is in fact a pullback in $\cc{E}$ and thus $m^*$ is a pullback of $m$ along $s$.  
+
+Arrows in $\cc{E}_\alpha$ that are isomorphisms (epimorphisms,...) \textit{in} $\cc{E}_\alpha$  will be refered to as \textit{vertical} isomorphisms (epimorphisms,...).
+\end{observation}
+
+\begin{definition}
+We will say that \textbf{isomorphisms (epimorphisms,...) are stable}  if for every vertical isomorphism (epimorphism,...) $m$ it follows that every pullback $m^*$ of it is a vertical isomorphism (epimorphism,...). 
+\end{definition}
+
+\begin{observation}
+Isomorphisms are stable in any prefibration or precofibration.    
+\end{observation}
+
+
+\subsubsection{Pulling back finite diagrams}
+
+Objects in $\cc{E}$ and vertical arrows are examples of a more general type of object that we can \textit{pullback} in a prefibration. It is well known that a functor preserves finite limits if and only if the functor preserves terminal objects and pullbacks. We have already developed a notion of stability for terminal object  and classes of morphisms in the previous section. In this section we define stability of pullbacks taken in a fibre. To encompass the three types of objects we will take a fixed finite category $\cc{D}$ with a terminal object $t$ and consider the set of functors ${\cc{D} \mr{G} \cc{E}}$ that factor through a fibre.
+
+\[
+\xymatrix{& \cc{D} \ar[dr]^{G} \ar[dl]_{G_\alpha} \ar@{}[d]|(.6){\equiv} & 
+\\
+	 \cc{E}_\alpha \ar[rr]_{j_\alpha}  && \cc{E}}
+\]
+
+\noindent We will  allow the abuse of notation ${\cc{D} \mr{G} \cc{E}_\alpha}$ to indicate through which fibre such a functor factors. 
+
+These functors form the objects of a category $\cc{E}^{(\cc{D})}$ whose morphisms from ${\cc{D} \mr{G} \cc{E}_\alpha}$ to ${\cc{D} \mr{H} \cc{E}_\beta}$ are natural transformations $G \overset{\eta}{\implies} H$ of functors $\cc{D} \mr{} \cc{E}$ that are projected onto a single arrow in $\cc{G}$. That is for every ${ d \in \cc{D}}$, it follows that $F(\eta_d)=F(\eta_t)$. 
+
+\[
+\xymatrix{&\cc{D} \ar[dl]_{G_\alpha} \ar[dr]^{H_\beta} & &  &\\
+		  \cc{E}_\alpha \ar[dr]_{j_\alpha}  \ar@{}[rr]|{\overset{\eta}{\implies}} && \cc{E}_\beta \ar[dl]^{j_\beta} &  Gd \ar[r]^{\eta_d} & Hd &  \\
+		&\cc{E} && \alpha \ar[r]^{F(\eta_t)} & \beta  }
+\]
+ \noindent The category $\cc{E}^{(\cc{D})}$ is a subcategory of the functor category $\cc{E}^{\cc{D}}$ and we denote the inclusion $\cc{E}^{(\cc{D})} \mr{i} \cc{E}^{\cc{D}}$. The assignments ${\xymatrix{G \ar@{|->}[r] & F(G_t)}}$ and ${\xymatrix{\eta \ar@{|->}[r] & F(\eta_t)}}$ yield a functor ${\cc{E}^{(\cc{D})} \mr{F^{(\cc{D})}} \cc{G}}$. For this functor there  is a natural identification between the categories $(\cc{E}^{(\cc{D})})_\alpha$ and ${\cc{E}_\alpha}^{\cc{D}}$ and we will allow the abuse of language of sometimes using the latter as if it were the fibre itself. 
+
+
+\begin{remark}
+The functor $F^{(\cc{D})}$ is prefibred. A morphism ${G \mr{\eta} H \in \cc{E}^{(\cc{D})}}$ is cartesian if and only if for every $d \in \cc{D}$ the morphisms $\eta_d$ are cartesian. Consequently if $F$ is a fibration, then $F^{(\cc{D})}$ is a fibration. Similarly if $F$ is cleaved (split), then so is $F^{(\cc{D})}$.
+\end{remark}
+
+
+\begin{observation}
+For any category $\cc{A}$ and $X \in \cc{A}$ we will use $\cc{D} \mr{\Delta X} \cc{A}$ to denote the functor defined for every ${d \mr{a} d' \in \cc{D}}$ as ${(\Delta X)(d \mr{a} d')=X \mr{1_X} X}$. We call this the \textit{constant} functor $X$. For ${X \mr{f} Y \in \cc{A}}$ we associate a natural transformation between the constant functors $\Delta X \mr{\Delta f} \Delta Y$ defined as the constant family $f$. This yields a functor ${\cc{A} \mr{\Delta} \cc{A}^{\cc{D}}}$.
+\end{observation}
+
+
+\begin{remark}\label{F(D) es fibracion} 
+Take  $\cc{E}^{\cc{D}} \mr{F^{\cc{D}}}   \cc{G}^{\cc{D}}$  the functor defined as postcomposing with $F$. The functor $F^{(\cc{D})}$ is a pullback of $F^{\cc{D}}$ along $\cc{G} \mr{\Delta} \cc{G}^{\cc{D}}$ in $\cc{C}at$ and we have the following diagram.
+
+\[
+\xymatrix{\cc{E} \ar@/^1.5pc/[rrd]^\Delta \ar@/_2.pc/[ddr]_F \ar[dr]^{\delta} & \\
+		  &\cc{E}^{(\cc{D})} \ar@{}[l]|\equiv \ar@{}[u]|\equiv \ar[r]^i \ar[d]_{F^{(\cc{D})}} & \cc{E}^{\cc{D}}  \ar[d]^{F^{\cc{D}}} \\
+		  &\cc{G} \ar[r]_\Delta & \cc{G}^{\cc{D}} \ar@{}[ul]|{p.b.}}
+\]
+
+\noindent The functor  $\delta$ is cartesian. If $F$ is cleaved, thenr $\delta$ is a morphism between cleaved functors.
+\end{remark}
+
+
+\begin{remark}\label{FD es fibracion}
+If $F$ is a prefibration,  $F^{\cc{D}}$ will not necessarily be a prefibration. This does not happen with fibrations. We show now that when $F$ is a fibration, so is $F^{\cc{D}}$. 
+
+If $G \mr{f} H \in \cc{E}^{\cc{D}}$ satisfies that  for every ${d \in \cc{D}}$ the morphisms $f_d$ are strong cartesian, it follows that $f$ is cartesian. If $F$ is a fibration, given ${A \mr{\eta} B \in \cc{G}^{\cc{D}}}$ and ${X \in (\cc{E}^{\cc{D}})_B}$, a choice of strong cartesian morphisms ${{{X_d}^*} \mr{f_d} X_d}$ over $\eta_d$ determines a functor $\cc{D} \mr{X^*} \cc{E}$ over $A$ and a cartesian morphism $X^* \mr{f} X$ over $\eta$ (only finite choices are being made).
+
+\[
+\xymatrix{{X_d}^* \ar[rr]^{f_d} \ar@{-->}[dr]_{\exists ! X^*(a)} & & X_d \ar[dr]^{X(a)} \\
+		  & {X_{d'}}^* \ar[rr]^{f_{d'}} \ar@{}[ur]|\equiv && X_{d'} \\
+		  A_d \ar[rr]^{\eta_d} \ar[dr]_{G(a)} && B_d \ar[dr]^{H(a)} \\
+		  & A_{d'} \ar[rr]^{\eta_{d'}} \ar@{}[ur]|\equiv && B_{d'}}
+\]
+
+\noindent Thus  the existence of the necessary cartesian morphisms for $F^{\cc{D}}$ to be a fibration follows without using choice. In such a case we have that $i$ in Remark \ref{F(D) es fibracion} preserves  cartesian morphisms. If $F$ is a cleaved (split) fibration, then $F^{\cc{D}}$ is  cleaved (split) fibration and $i$ preserves transport morphisms. 
+\end{remark}
+
+\begin{remark}
+The conclusions in Remarks \ref{FD es fibracion} and \ref{F(D) es fibracion} are true if we replace the words \textit{fibration} and \textit{cartesian} for \textit{cofibration} and \textit{cocartesian} respectively. 
+\end{remark}
+
+
+\begin{observation}
+Let \textbf{2} denote the category $\{0 \mr{} 1\}$. Vertical arrows in a fibration $F$ are naturally identified with the objects of $\cc{E}^{(\textbf{2})}$ and pulling back vertical arrows in $F$ is the same as pulling back objects in $F^{(\textbf{2})}$. This allows us to generalize the notion of pulling back diagrams of type $\cc{D}$ a prefibration.
+\end{observation}
+
+
+\subsubsection{Pulling back cones}
+
+\begin{observation}
+For any category $\cc{A}$ and a functor $\cc{D} \mr{G} \cc{A}$, a cone ${\{C \mr{c_d} G_d\}_{d \in \cc{D}}}$ of $G$ in $\cc{A}$ is nothing but an arrow $\Delta C \mr{c} G$ in $\cc{A}^{\cc{D}}$. 
+\end{observation}
+
+We will call an arrow $\delta C \mr{c} G$ in ${\cc{E}_\alpha}^{\cc{D}}$ a \textit{vertical cone} in $F$.
+
+\begin{definition}
+We will say a vertical cone $\delta C \mr{c} G  \in {\cc{E}_\alpha}^{\cc{D}}$ is \textbf{universal} if ${\{C \mr{c_d} G_d\}_{d \in \cc{D}}}$ is a limit cone of $G$ in $\cc{E}_\alpha$.
+\end{definition}
+ 
+\begin{observation} 
+A vertical cone $\delta C \mr{c} G$ in ${\cc{E}_\alpha}^{\cc{D}}$ is universal if and only if for every $X \in \cc{E}_\alpha$ and for every vertical cone $\delta X \mr{x} G$ in ${\cc{E}_\alpha}^{\cc{D}}$ there exists a unique $X \mr{f} C \in \cc{E}_\alpha$ such that $x=c \cdot \delta (f)$. That is for every $X \in \cc{E}_\alpha$ we have the following universal property.
+
+\begin{align} \label{cono universal pedorro}
+\xymatrix{X \ar@{-->}[d]_{\exists ! f}  & \delta X \ar[d]_{\delta f} \ar[rd]^(.4){\forall} &  \\
+	C	   & \delta C \ar[r]_c  \ar@{}[ur]|(.3)\equiv & G \\
+		  \alpha & \alpha \ar[r]^{id_\alpha} & \alpha}
+\end{align}
+\end{observation}
+
+\begin{observation}
+ We can pullback a cone $\delta C \mr{c} G \in {\cc{E}_\beta}^{\cc{D}}$  along  ${\alpha \mr{\varphi} \beta \in \cc{G}}$ to a vertical cone in ${\cc{E}_\alpha}^{\cc{D}}$  choosing a cartesian morphism ${C^* \mr{s} C}$ over $\varphi$ in $F$ and a cartesian morphism ${G^* \mr{t} G}$ over $\varphi$ in $F^{(\cc{D})}$. 
+
+\begin{align}\label{pullback directo de un cono}
+\xymatrix{\delta (C^*) \ar[r]^{\delta s} \ar@{-->}[d]_{\exists !} & \delta C \ar[d]^c\\
+		  G^* \ar[r]_t \ar@{}[ur]|\equiv & G \\
+		  \alpha \ar[r]^\varphi & \beta}
+\end{align}
+\end{observation}
+
+\begin{definition}
+We will say that \textbf{limits of type $\cc{D}$ are stable}  if vertical universal cones are stable for pullbacks such as \ref{pullback directo de un cono}.
+\end{definition}
+
+\begin{observation}\label{definicion mala de estable}
+Pullbacks are limits of functors whose domain is the following category $\cc{P}$.
+
+\[
+\xymatrix{ &  0  \ar [d] \\
+		  2  \ar [r]  &  1}
+\]
+
+\end{observation}
+
+\begin{definition}
+ We will say that \textbf{pullbacks are stable}  if limits of type $\cc{P}$ are stable.
+\end{definition}
+
+
+
+\subsubsection{A property equivalent to the stability of pullbacks}
+
+
+We will give a more comprehensive characterization of the stability of pullbacks in a fibration. Nevertheless we will develop it for the general type of finite category $\cc{D}$ with terminal object t.
+
+\begin{lemma}
+For every category $\cc{A}$ the functor $\cc{A} \mr{\Delta} \cc{A}^{\cc{D}}$ is fully faithful (this actually holds for any connected category $\cc{D}$).
+\end{lemma}
+
+\begin{proof}
+ For $X,Y \in \cc{A}$ and ${\Delta X \mr{\eta} \Delta Y \in \cc{A}^{\cc{D}}}$ we have ${\eta=\Delta(\eta_t)}$. This is because for every $d\in\cc{D}$ the unique arrow $d \mr{} t \in \cc{D}$ yields the following diagram.
+
+\[
+\xymatrix{d \ar[d]& X \ar[d]_{1_X} \ar[r]^{\eta_d} & Y \ar[d]^{1_Y} \\
+		  t & X \ar@{}[ur]|\equiv \ar[r]_{\eta_t} & Y }
+\]
+
+
+\end{proof}
+
+\begin{corollary}
+$\cc{E} \mr{\delta} \cc{E}^{(\cc{D})}$ and  $\cc{E}^{(\cc{D})} \mr{i} \cc{E}^{\cc{D}}$ are fully faithful functors. 
+\end{corollary}
+
+\begin{proof}
+Since fully faithful functors are stable in $\cc{C}at$  \cite[page 128]{sga1} it follows from Remark \ref{F(D) es fibracion}  that  $i$ and consequently $\delta$ are fully faithful. 
+\end{proof}
+
+\begin{remark}\label{caracterization of universal cones}
+In this context we can merge the sets $hom_{\cc{E}}(X,Y)$ and ${hom_{\cc{E}^{(\cc{D})}}(G,H)}$ with $hom_{\cc{E}^{(\cc{D})}}(\delta X,\delta Y)$ and ${hom_{\cc{E}^{\cc{D}}}(iG,iH)}$ respectively. Thus we will  adopt the abuse of notation of suppressing $\delta$, $\Delta$ and $i$ in our expressions. Looking at diagram \ref{cono universal pedorro} we have that a vertical cone $C \mr{c} G$ in ${\cc{E}_\alpha}^{\cc{D}}$ is universal if and only if it verifies the following universal property for every $X \in \cc{E}_\alpha$. 
+
+\[
+\xymatrix{X \ar[dr]^{\forall} \ar@{-->}[d]_{\exists ! f} & \\
+		  C \ar[r]_c \ar@{}[ur]|(.3)\equiv & G \\
+		  \alpha \ar[r]^{id_\alpha} & \alpha}
+\]
+
+\noindent That is for every $X \in \cc{E}_\alpha$ the function 
+
+\begin{align*}
+hom_\alpha(X,C) \mr{c_*} hom_\alpha(X,G)
+\end{align*}
+\noindent is a bijection.
+\end{remark}
+
+\begin{proposition}\label{preservacion de limite intrinseca}
+Limits of type $\cc{D}$ are stable  if and only if for every ${\alpha \mr{\varphi} \beta \in \cc{G}}$, every $\cc{D} \mr{G} \cc{E}_\beta$ and every vertical universal cone ${C \mr{c} G \in {\cc{E}_\beta}^{\cc{D}}}$ we have that for every $X \in \cc{E}_\alpha$ the function 
+
+\[
+hom_\varphi(X,C) \mr{c_*} hom_\varphi(X,G)
+\]
+
+\noindent is a bijection.
+\end{proposition}
+
+\begin{proof}
+Take cartesian morphisms $C^* \mr{s} C$ and $G^* \mr{t} G$ over $\varphi$. Diagram \ref{pullback directo de un cono} can be written as follows.
+
+\begin{align*}
+\xymatrix{C^* \ar[r]^s \ar[d]_{c^*} & C \ar[d]^c \\
+		  G^* \ar[r]^t & G \ar@{}[ul]|\equiv \\
+		  \alpha \ar[r]^\varphi & \beta}
+\end{align*}
+\noindent Thus we have the following commutative diagram.
+
+\begin{align*}
+\xymatrix{hom_\alpha(X,C^*) \ar[r]^{s_*} \ar[d]_{(c^*)_*} & hom_\varphi(X,C) \ar[d]^{c_*}\\
+		  hom_\alpha(X,G^*) \ar[r]_{t_*} & hom_\varphi(X,G) \ar@{}[ul]|\equiv }
+\end{align*}
+
+\noindent The result follows from this diagram and Remark \ref{caracterization of universal cones}.
+\end{proof}
+
+\begin{remark}\label{conos en E estan sobre una flecha de G}
+For a functor $\cc{D} \mr{G} \cc{E}$ a cone $C \mr{c} G \in \cc{E}^{\cc{D}}$ of $G$ in $\cc{E}$ is a limit cone if and only if for every $X \in \cc{E}$  the following function is a bijection.
+
+\begin{align*}
+hom_{\cc{E}^{\cc{D}}}(X,C) \mr{c_*} hom_{\cc{E}^{\cc{D}}}(X,G)
+\end{align*}
+
+\end{remark}
+
+\begin{proposition}\label{equivalencia con pullbacks estables}
+Limits of type $\cc{D}$ are stable if and only if the functors $\cc{E}_\alpha \mr{j_\alpha} \cc{E}$ preserves limits of type $\cc{D}$.
+\end{proposition}
+
+\begin{proof}
+Take $\cc{D} \mr{G} \cc{E}_\alpha$ a functor and $C \mr{c} G$ a universal cone of $G$ in $\cc{E}_\alpha$. The result follows from Proposition \ref{preservacion de limite intrinseca}, Remark \ref{caracterization of universal cones}, Remark \ref{conos en E estan sobre una flecha de G} and the following sequence.
+
+\[
+{hom_{\cc{E}^{(\cc{D})}}(X,C)=\underset{\varphi}{\amalg}\ hom_\varphi(X,C) \mr{c_*} \underset{\varphi}{\amalg}\ hom_\varphi(X,G)=hom_{\cc{E}^{(\cc{D})}}( X,G)}
+\]
+\end{proof}
+
+\begin{theorem}\label{prefi mas precofib preserva limites}
+If $F$ is precofibred, then terminal objects and limits of type $\cc{D}$ are stable.
+\end{theorem}
+
+\begin{proof}
+For $\alpha \mr{\varphi} \beta \in \cc{G}$, $1_\beta$ a terminal object of $\cc{E}_\beta$ and $(1_\beta)^* \mr{s} 1_\beta$  cartesian over $\varphi$ we will prove that $(1_\beta)^*$ is a terminal object in $\cc{E}_\alpha$. Take $X\in \cc{E}_\alpha$ and $X \mr{r} X_*$ cocartesian over $\varphi$. we have the following diagram.
+
+\begin{align}\label{terminal sobre phi}
+hom_\alpha(X,(1_\beta)^*) \mr{s_*}  hom_\varphi(X,1_\beta) \ml{r^*} hom_\beta(X_*,1_\beta)
+\end{align}
+
+\noindent Both arrows are bijections and the set on the right is a singleton. The result follows.
+
+ Take $C \mr{c} G$ a universal vertical cone in ${\cc{E}_\beta}^{\cc{D}}$. We will prove that for every $X \in \cc{E}_\alpha$ the function $hom_\varphi(X,C) \mr{c_*} hom_\varphi(X,G)$ is a bijection. Take $X \mr{r} X_*$ cocartesian over $\varphi$. We have the following diagram.
+
+\begin{align*}
+\xymatrix{hom_\varphi(X,C) \ar[r]^{c_*} & hom_\varphi(X,G) \ar@{}[dl]|\equiv \\
+		  hom_\beta(X_*,C) \ar[r]_{c_*} \ar[u]^{r^*} & hom_\beta(X_*,G) \ar[u]_{r^*}}
+\end{align*}
+
+\noindent The bottom arrow and the vertical arrows are bijections. The result follows.
+
+ \end{proof}
+
+\begin{definition}
+We will say that \textbf{finite limits are stable} if terminal objects and pullbacks are stable.
+\end{definition}
+
+\begin{definition}
+A prefibration ${\cc{E} \mr{F} \cc{G}}$  is \textbf{finitely complete} if the categories $\cc{E}_\alpha$ are finitely complete and finite limits are stable.
+\end{definition}
+
+\noindent Accordingly we have the category of finitely complete prefibrations whose morphisms are cartesian $\cc{G}$-functors $f \in hom_{\cc{G}}(\cc{E},\cc{E}')$ such that for every $\alpha \in \cc{G}$ the restrictions 
+
+\begin{align*}
+\cc{E}_\alpha \mr{f_\alpha} \cc{E}'_\alpha
+\end{align*}
+
+\noindent preserve finite limits. 
+
+\begin{definition}
+A prefibration ${\cc{E} \mr{F} \cc{G}}$ is  \textbf{regular} if the categories $\cc{E}_\alpha$ are regular, finite limits are stable and strict epimorphisms are stable.
+\end{definition}
+
+The category of regular prefibrations  over $\cc{G}$ is the category that has regular prefibrations (fibrations) as objects and whose morphisms are cartesian $\cc{G}$-functors $f \in hom_{\cc{G}}(\cc{E},\cc{E}')$ such that for every $\alpha \in \cc{G}$ the restrictions 
+
+\begin{align*}
+\cc{E}_\alpha \mr{f_\alpha} \cc{E}'_\alpha
+\end{align*}
+
+\noindent are regular functors. This category is included in the category if finitely complete prefibrations. The restrictions to fibrations are natural and coherent.
+
+\subsubsection{Reflection properties in a prefibration}
+Properties of functors such as reflecting limits and other types of categorical objects can be defined in a prefibration. Here we define without using clivages the property that the pullback functors are conservative over a specific set of morphisms as defined in section \ref{families}.  
+
+Consider $\cc{A}$ a \textit{stable} set of vertical arrows. We will use the notation  $\cc{A}_\alpha$ to represent the subset $\cc{A} \cap \cc{E}_\alpha$. We will work freely identifying vertical arrows in $F$ with objects in $F^{\textbf{2}}$.
+
+\begin{definition}
+The prefibration ${\cc{E} \mr{F} \cc{G}}$ is \textbf{conservative over $\cc{A}$} if for every cartesian morphism $f^* \mr{} f$ such that $f \in \cc{A}$ and $f^*$ is an isomorphism, it follows that $f$ is an isomorphism.
+\end{definition}
+
+\noindent We will say the prefibration ${\cc{E} \mr{F} \cc{G}}$ is \textit{conservative} if it is conservative over the complete set of arrows of $\cc{E}$. 
+
+
+\subsection{Two facts about epimorphisms in a prefibration}
+
+
+\begin{lemma}\label{casi epis}
+If $A \mr{f} B$ is an epimorphism in $\cc{E}_\alpha$ and $g,h \in hom_\varphi(B,C)$ satisfy $gf=hf$, then $g=h$. 
+\end{lemma}
+
+\begin{proof}
+Take $C^* \mr{s} C$ a cartesian arrow over $\varphi$. We have the following diagram.
+
+\[
+\xymatrix{hom_\varphi(B,C) \ar[r]^{f^*} \ar@{}[dr]|\equiv & hom_\varphi(A,C) \\
+		  hom_\alpha(B,C^*) \ar[u]^{s_*} \ar[r]_{f^*} & hom_\alpha(A,C^*) \ar[u]_{s_*}}
+\]
+
+\noindent Since the vertical arrows are bijections and the bottom is injective, the result follows.
+\end{proof}
+
+
+\begin{lemma}\label{casi strict epi}
+If $A \mr{f} B$ is a strict epimorphism in $\cc{E}_\alpha$, then every compatible morphism with $f$ in $\cc{E}$ factors through $f$.
+\end{lemma}
+
+\begin{proof}
+Let ${A \mr{g} C}$ be compatible with $f$. Take ${C^* \mr{s} C}$ cartesian over ${F(g)=\alpha \mr{\varphi} \beta}$. It is straightforward that the only factorization of $g$ through $s$ over $\alpha$ is compatible with $f$. In a diagram:
+
+\begin{align*}
+\xymatrix {& A  \ar [dl]  _{f}  \ar [ddr] ^{g}  \ar  @{-->} [dd] ^{\exists ! a}  \\
+		   B  \ar @{-->} [dr] _{\exists ! b}  &   \ar @{} [l] |(.4){\equiv} & \\
+		   & C^*  \ar [r] _{s}  \ar @{} [ru] |(.3){\equiv}  &  C  \\
+		   \alpha  \ar [r] ^{id_\alpha}  & \alpha  \ar [r] ^{\varphi}  &  \beta }
+\end{align*}
+
+\end{proof}
+
+
+\section{COLIMIT OF A FIBRATION WITH COFILTERED BASE}
+In this section we will study the structure of the colimit of a fibration developed in \cite{sga4} for the particular case where the base category is cofiltered.
+
+Let ${\cc{E} \mr{F} \cc{G}}$ be a fibration where $\cc{G}$ is cofiltered.  If $S$ denotes the set of cartesian morphisms in $\cc{E}$, the \textit{colimit} of the fibration is defined as the category of fractions $\cc{E}[S^{-1}]$ characterized by a functor ${\cc{E} \mr{Q} \cc{E}[S^{-1}]}$  that satisfies the following universal property in $\cc{C}at$. 
+
+\begin{proposition} 
+For every functor ${\cc{E} \mr{G} \cc{I}}$ such that $G$ transforms cartesian morphisms into isomorphisms, there exists a unique functor ${\cc{E}[S^{-1}] \mr{H} \cc{I}}$ such that $HQ=G$.
+ \end{proposition}
+
+\begin{remark}
+Because $\cc{G}$, is cofiltered $S$ admits a calculus of right fractions  \cite{sga4,tesemi}. Thus we can describe the category of fractions $\cc{E}[S^{-1}]$  as done in \cite{gabzis} as follows. The objects of $\cc{E}[S^{-1}]$ are the objects of $\cc{E}$. A morphism ${X \mr{} Y}$ in $\cc{E}[S^{-1}]$ is an equivalence class of the quotient set of the set of pairs  $X \ml{s} A \mr{f} Y$ with $s \in S$ where the equivalence relation is given by the relation ${X \ml{s} A \mr{f} Y \sim X \ml{s'} A' \mr{f'} Y}$ if and only if there exists ${X \ml{s''} A'' \mr{f''} Y}$ with $s'' \in S$ and arrows $A'' \mr{} A$ and $A'' \mr{} A'$ in $\cc{E}$ such that the following diagram commutes. 
+
+\[
+\xymatrix @+3ex {& A \ar[dl]_s \ar[dr]^f & \\
+		  X & A'' \ar[l]_{s''} \ar[r]^{f''} \ar[u] \ar[d] & Y \\
+		  & A' \ar[ul]^{s'} \ar[ur]_{f'} &}
+\]
+
+\noindent We will denote the class of the pair ${X \ml{s} A \mr{f} Y}$ by  ${X \mr{f/s} Y} $. For ${X \mr{f/s} Y \mr{g/t} Z}$ having a calculus of right fractions guarantees that there is a pair $A \ml{u} C \mr{h} B$ with $u \in S$ such that $su \in S$ and the following diagram commutes.
+ 
+\[
+\xymatrix{&& C \ar[dl]_u \ar[dr]^h && \\
+		  & A \ar[dl]_s \ar[dr]^f && B \ar[dl]_t \ar[dr]^g & \\
+		  X && Y && Z}
+\] 
+ 
+\noindent The operation $(g/t)(f/s):=(gh)/(su)$ is well defined, which defines the composition. The functor $Q$ is defined as the identity on objects and for ${A \mr{f} Y \in \cc{E}}$ we have $Q(f)=f/{1_A}$. For ${A \mr{s} X \in S}$, and adopting the abuse of notations $f/{1_A}=f$ and $1_A/s=1/s$,  we have that ${({1}/s) \cdot s=1_A}$, $s \cdot ({1}/s)=1_X$ and ${f/s=f\cdot ({1}/s)}$.  For details see \cite{gabzis}.
+\end{remark}
+
+
+\subsection{Colimit of a Finitely Complete Fibration}
+Our objective in this section is to prove the following theorem.
+
+
+\begin{theorem}\label{colimit of finite complete fibrations is finite complete}
+If $F$ is finitely complete, then $\cc{E}[S^{-1}]$ is a finitely complete category and the functors
+
+\[
+\xymatrix{\cc{E}_\alpha  \ar[dr]_{j_\alpha} \ar[rr]^{J_\alpha} & & \cc{E}[S^{-1}]\\ 
+		       & \cc{E} \ar[ur]_Q \ar@{}[u]|(.6)\equiv  }		
+\]
+\noindent preserve finite limits. More so if $\ \cc{I} \in \cc{C}at_{fl}$  and ${\cc{E}[S^{-1}] \mr{H} \cc{I}}$ is a functor such that for every ${\alpha \in \cc{G}}$ the functors $H \cdot J_\alpha \in \cc{C}at_{fl}$, it follows that ${H \in \cc{C}at_{fl}}$.
+\end{theorem}
+
+\begin{corollary} \label{buena restriccion a finite complete}
+If $\ \cc{I} \in \cc{C}at_{fl}$ and ${\cc{E} \mr{G} \cc{I}}$ is such that $G$ transforms cartesian morphisms into isomorphisms and for every ${\alpha \in \cc{G}}$ the functors $G \cdot j_\alpha \in \cc{C}at_{fl}$, then there exists a unique functor ${\cc{E}[S^{-1}] \mr{H} \cc{I}} \in \cc{C}at_{fl}$ such that $HQ=G$.
+\end{corollary}
+
+\begin{proof}
+We know of the existence of a unique functor $H$ that satisfies $HQ=G$. The fact that it preserves finite limits follows from the following diagram.
+
+\begin{align*}
+\xymatrix @+2ex {& \cc{E}[S^{-1}] \ar[r]^H \ar@{}[dr]|(.3)\equiv & \cc{I} \\
+		  & \cc{E} \ar@{}[l]|(.35)\equiv \ar[u]^Q \ar[ur]_G & \\
+		  & \cc{E}_\alpha \ar@/^3pc/[uu]^{J_\alpha} \ar[u]_{j_\alpha}}
+\end{align*}
+
+\end{proof}
+
+\begin{corollary}\label{funtorialidad}
+The construction determines a functor from the category of finitely complete fibrations into $\cc{C}at_{fl}$.
+\end{corollary}
+
+\begin{proof}
+Suppose we have a morphisms of finitely complete fibrations.
+
+\begin{align*}
+\xymatrix{ \cc{E} \ar[rr]^f \ar[dr]_{F} && \cc{E'} \ar[dl]^{F'}\\
+		  & \cc{G} \ar@{}[u]|(.6)\equiv}
+\end{align*}
+
+\noindent From  the following commutative diagram it follows that for every ${\alpha \in \cc{G}}$ the functors $Q'f \cdot j_\alpha$ preserve finite limits.
+
+\begin{align*}
+\xymatrix @+3ex {\cc{E}[S^{-1}] \ar@{}[dr]|\equiv \ar@{-->}[r]^{\exists !} & \cc{E'}[{S'}^{-1}] \\
+		  \cc{E} \ar[u]^Q \ar[r]^f & \cc{E'} \ar[u]^{Q'} \ar@{}[r]|(.35)\equiv & \\
+		  \cc{E}_\alpha \ar@{}[ur]|\equiv \ar[r]_{f_\alpha} \ar[u]^{j_\alpha} & \cc{E'}_{f(\alpha)} \ar[u]^{j_{f(\alpha)}} \ar@/_3pc/[uu]_{J_{f(\alpha)}} }
+\end{align*}
+
+\noindent The result follows.
+\end{proof}
+
+
+\begin{proposition}\label{fibras preservan terminal object}
+The functors $\cc{E}_\alpha \mr{J_\alpha} \cc{E}[S^{-1}]$ preserve terminal objects.
+\end{proposition}
+
+\begin{proof}
+ Let $1_\alpha $ be a terminal object in $\cc{E}_\alpha$ and $X \in \cc{E}[S^{-1}]$. Take a cone of the following diagram in $\cc{G}$.
+
+
+\[
+\xymatrix{& \beta \ar@{-->}[dl]_{\varphi_0} \ar@{-->}[dr]^{\varphi_1} &\\
+		  F(X) && \alpha}
+\]
+\noindent Take $X^* \mr{s} X$ and $(1_\alpha)^* \mr{t} 1_\alpha$ cartesian morphisms over $\varphi_0$ and $\varphi_1$ respectively. We obtain a morphism $X^* \mr{f} 1_\alpha$ in $\cc{E}$ going through the terminal object $(1_\alpha)^*$. This yields a morphism $X \mr{f/s} 1$ in $\cc{E}[S^{-1}]$. Now suppose we have $X \mrpair{f_0/s_0}{f_1/s_1} 1_\alpha$ in $\cc{E}[S^{-1}]$. Take a cone of the following diagram in $\cc{G}$.
+ 
+ \[
+\xymatrix  @+3ex{  & F(X) & \\
+		  {} \ar [ur] ^{F(s_0)} \ar [dr] _{F(f_0)} & \beta  \ar @{-->} [u] _{\varphi_0} \ar @{-->} [d] _{\varphi_1} \ar @{-->} [l] _{\psi_0} \ar @{-->} [r] _{\psi_1} & {} \ar[ul]_{F(s_1)} \ar[dl]^{F(f_1)}\\
+		    & \alpha &} 
+ \] 
+ 
+\noindent Let $X^* \mr{s} X$ be a cartesian morphism over $\varphi_0$. Take ($i=0,1$) $a_i$ the unique morphism over $\psi_i$ that factors $s$ through $s_i$. It follows that $f_0a_0=f_1a_1$ in $\cc{E}$ (\ref{terminal sobre phi}). Thus precomposing with $1/s$ we obtain $f_0/s_0=f_1/s_1$. 
+ 
+\end{proof}
+
+
+\begin{proposition}\label{fibras preservan pulback all the way}
+The functors $\cc{E}_\alpha \mr{J_\alpha} \cc{E}[S^{-1}]$ preserve pullbacks. 
+\end{proposition}
+
+\begin{proof}
+It is an immediate consequence of Proposition \ref{equivalencia con pullbacks estables} and the fact that ${\cc{E} \mr{Q} \cc{E}[S^{-1}]}$ preserves finite limits \cite{gabzis}.
+\end{proof}
+
+
+\begin{proposition}\label{pullbacks se traen a las fibras}
+Any diagram of type $\cc{P}$ in  $\cc{E}[S^{-1}]$ is naturally isomorphic to one that can be factored through a fibre. More precisely, for every  ${\cc{P} \mr{G} \cc{E}[S^{-1}]}$ there exists ${\alpha \in \cc{G}}$, $G^*$ and $\eta$
+
+
+\[
+\xymatrix{& \cc{P} \ar@{-->}[dl]_{G^*} \ar@{}[d]|(.6){ \overset{\eta}{\implies}} \ar[dr]^G & \\
+          \cc{E}_\alpha \ar[rr]_{J_\alpha} && \cc{E}[S^{-1}]}
+\]
+
+\noindent where the natural transformation is composed of cartesian morphisms.
+\end{proposition}
+
+\begin{proof}
+Let $\cc{P} \mr{G} \cc{E}[S^{-1}]$ be such a diagram. Suppose ${G(a_i)=f_i/{s_i}}$. Take a cone of the following diagam in $\cc{G}$.
+
+\[
+\xymatrix @+2ex {&& \alpha \ar@/_2pc/@{-->}[dddll]_{\varphi_2} \ar@/^2pc/@{-->}[dddrr]^{\varphi_0} \ar@{-->}[ddd]_{\varphi_1} \ar@{-->}[ddl]_{\psi_1} \ar@{-->}[ddr]^{\psi_0}&& \\
+				\\
+		  & {} \ar[dl]_(.35){F(s_1)} \ar[dr]^(.4){F(f_1)} && {} \ar[dl]_(.4){F(f_0)} \ar[dr]^(.35){F(s_0)} & \\
+		  F(G_2) && F(G_1) && F(G_0) }
+\]
+
+\noindent Take ($i=0,1,2$) $G^*_i \mr{\eta_i} G_i$  a cartesian morphism over $\varphi_i$. Since {($i=0,1$)} $s_i$ is cartesian there is a unique factorization of $\eta_i$ through $s_i$ over $\psi_i$, namely $b_i$. Set $G^*(a_i)$ to be the unique factorization of $f_ib_i$ through $\eta_1$ over $\alpha$. 
+\end{proof}
+
+\begin{remark}
+Proposition \ref{pullbacks se traen a las fibras} holds for any finite diagram $\cc{D}$ instead of $\cc{P}$, though the proof is harder when composition of nontrivial arrows exist in $\cc{D}$. We will not use the general case.
+\end{remark}
+
+\begin{corollary}
+Pullbacks exist in $\cc{E}[S^{-1}]$ and the rest of Theorem \ref{colimit of finite complete fibrations is finite complete} follows. 
+\end{corollary}
+
+\begin{proof}
+The way to calculate pullbacks in $\cc{P}  \mr{G} \cc{E}[S^{-1}]$ is to take $G^*$ as in Proposition \ref{pullbacks se traen a las fibras} and take any pullback of $G^*$  in $\cc{E}_\alpha$. This will yield the following diagram.
+
+
+
+\begin{align} \label{pullbacks en el colimite}
+\xymatrix{P \ar[rr]^{p_0} \ar[dd]_{p_2} \ar@{}[drdr]|{p.b.} && {G^*}_0 \ar[ddrr]^{\eta_0} \ar[dd]^{G^*(a_0)} \\
+\\
+		  {G^*}_2 \ar[rr]_{G^*(a_1)} \ar[ddrr]_{\eta_2} && {G^*}_1 \ar[ddrr]^{\eta_1} \ar@{}[dd]|\equiv \ar@{}[rr]|\equiv && G_0 \ar[dd]^{f_0/{s_0}} \\
+		  \\
+		   && G_2 \ar[rr]_{f_1/{s_1}} && G_1}	 
+\end{align}
+
+\noindent The arrows $\eta_i$ are isomorphisms and the square is a pullback in $\cc{E}_\alpha$ as well as in $\cc{E}[S^{-1}]$. 
+\end{proof}
+
+
+\subsection{Colimit of a Regular Fibration}
+
+Our objective in this section is to prove the following theorem.
+
+
+\begin{theorem}\label{colimit of regular fibrations is regular}
+If $F$ is a regular fibration, then $\cc{E}[S^{-1}]$ is a regular category and the functors
+
+\[
+\xymatrix{\cc{E}_\alpha  \ar[dr]_{j_\alpha} \ar[rr]^{J_\alpha} & & \cc{E}[S^{-1}]\\ 
+		       & \cc{E} \ar[ur]_Q \ar@{}[u]|(.6)\equiv  }		
+\]
+\noindent are regular. More so if $\ \cc{I} \in \cc{R}eg$ and ${\cc{E}[S^{-1}] \mr{H} \cc{I}}$ is a functor such that for every ${\alpha \in \cc{G}}$ the functors $H \cdot J_\alpha \in \cc{R}eg$, it follows that ${H \in \cc{R}eg}$.
+\end{theorem}
+
+The proofs of the following two corollaries ar \text{identical} to the proofs of Corollaries \ref{buena restriccion a finite complete} and \ref{funtorialidad}.
+
+
+\begin{corollary} 
+If $\ \cc{I} \in \cc{R}eg$ and ${\cc{E} \mr{G} \cc{I}}$ is such that $G$ transforms cartesian morphisms into isomorphisms and for every ${\alpha \in \cc{G}}$ the functors ${G \cdot j_\alpha \in \cc{R}eg}$, then there exists a unique ${\cc{E}[S^{-1}] \mr{H} \cc{I} \in \cc{R}eg}$ such that $[HQ=G]$.
+\end{corollary}
+
+
+\begin{corollary}
+The construction determines a functor from the category of regular fibrations into $\cc{R}eg$.
+\end{corollary}
+
+\begin{observation}
+If $A \mrpair{f}{g} B$  are in $\cc{E}$, we have that $f=g$ in $\cc{E}[S^{-1}]$ if and only if there exists $s \in S$ such that $fs=gs$ in $\cc{E}$. 
+\end{observation}
+
+\begin{proposition}\label{unicidad de la factorizacion}
+The functors $\cc{E}_\alpha \mr{J_\alpha} \cc{E}[S^{-1}]$ send strict epimorphisms to epimorphisms.
+\end{proposition}
+
+\begin{proof}
+Let $B \mrpair{f_0/s_0}{f_1/s_1} C$ be such that  $(f_0/s_0) f=(f_1/s_1) f$. Take a cone of the following diagram in $\cc{G}$.
+
+
+ \[
+\xymatrix @+3ex {  & \alpha & \\
+		  {} \ar[ur]^{F(s_0)} \ar[dr]_{F(f_0)} & \beta  \ar@{-->}[u]_{\varphi_0} \ar@{-->}[d]_{\varphi_1} \ar@{-->}[l]_{\psi_0} \ar@{-->}[r]_{\psi_1} & {} \ar[ul]_{F(s_1)} \ar[dl]^{F(f_1)}\\
+		    & F(C) &} 
+ \] 
+\noindent Let $B^* \mr{s} B$ be a cartesian morphism over $\varphi_0$. Take ($i=0,1$) $a_i$ the unique morphism over $\psi_i$ that factors $s$ through $s_i$. It suffices to prove that $f_0 a_0=f_1  a_1$ in $\cc{E}[S^{-1}]$. Take $A^* \mr{t} A$ cartesian over $\varphi_0$ and $f^*$ the corresponding pullback of $f$ along $\varphi_0$. 
+ 
+ 
+\[
+\xymatrix @+2ex {A^{**} \ar@{-->}[r]^u \ar[d]_{f^{**}} \ar@{}[dr]|\equiv& A^* \ar[rr]^t \ar[d]^{f^*} && A \ar[d]^f \ar@{}[dll]|\equiv \\
+		  B^{**} \ar@{-->}[r]_v  & B^* \ar[rr]_s \ar[dr]_{a_i} && B \\
+		   && {} \ar@{}[u]|\equiv \ar[ur]_{s_i} \ar[drr]^{f_i}& \\
+		  &{} & {} && C \\
+		  \gamma \ar@{-->}[r]^{F(u)}&\beta  \ar[rr]^{\varphi_0}&& \alpha }
+\] 
+ 
+ We have that $(f_0  a_0)f^*=(f_1  a_1)f^*$ in $\cc{E}[S^{-1}]$. Thus there is a cartesian morphism {$A^{**} \mr{u} A^*$} such that $(f_0  a_0f^*)u=(f_1  a_1f^*)u$ in $\cc{E}$. Take ${B^{**} \mr{v} B^*}$ cartesian over $F(u)$ and call $f^{**}$ the corresponding pullback of $f^*$ along $F(u)$. Since  $(f_0  a_0v)f^{**}=(f_1 a_1v)f^{**}$ in $\cc{E}$ and $F(f_1 a_1v)=F(f_0 a_0v)=\varphi_1F(u)$ from Lemma \ref{casi epis} we conclude  $f_0  a_0v=f_1 a_1v$ in $\cc{E}$. The result follows.
+\end{proof}
+
+\begin{proposition}\label{factorizacion a travez de epis}
+If $A \mr{f} B$ is a strict epimorphism in $\cc{E}_\alpha$, then every compatible morphism with $f$ in $\cc{E}[S^{-1}]$ factors through $f$.
+\end{proposition}
+
+\begin{proof}
+Let ${A \mr{gr^{-1}} C}$ be compatible with $f$. Take $K \mrpair{x_1}{x_2} A$ a kernel pair of $f$ in $\cc{E}_\alpha$  and ${K^* \mr{s} K}$ a cartesian morphisms over ${F(r)}$. 
+
+\[
+\xymatrix @+2.5ex {K^{**} \ar@{-->}[r]^t \ar@<-.5ex>[d]_{x_2^{**}} \ar@<.5ex>[d]^{x_1^{**}} & K^* \ar[r]^s \ar@<-.5ex>[d]_{x_2^*} \ar@<.5ex>[d]^{x_1^*} & K \ar@<-.5ex>[d]_{x_2} \ar@<.5ex>[d]^{x_1}  \\
+		  A^{**} \ar[d]^{f^{**}} \ar@{-->}[r]^u & A^*  \ar[r]^r & A \ar[d]^f \\
+		  B^{**}  \ar@{-->}[rr]^v & & B \\
+		  {F(K^{**})} \ar[r]^{F(t)} & {F(A^*)} \ar[r]^{F(r)} & \alpha}
+\]
+
+\noindent Since $(g/r)  x_1=(g/r) x_2$, we have that ${gx_1^*=gx_2^*}$ in $\cc{E}[S^{-1}]$. Thus there is a cartesian morphism ${K^{**} \mr{t} K^*}$ such that ${(gx_1^*)t=(gx_2^*)t}$ in $\cc{E}$. Take ${A^{**} \mr{u} A^*}$ cartesian over ${F(t)}$ and ${B^{**} \mr{v} B}$ cartesian over ${F(r)F(t)=F(st)}$. The morphisms ${K^{**} \mrpair{x_1^{**}}{x_2^{**}} A^{**}}$ are a kernel pair of the strict epimorphism $f^{**}$ in the fibre over $F(K^{**})$, so $gu$ is compatible with $f^{**}$ in $\cc{E}$. By Lemma \ref{casi strict epi} there is a morphism $h \in hom_\cc{E}(B^{**},C)$ such that $gu=fh$ in $\cc{E}$. The morphism ${B \mr{h/v} C}$ yields the desired factorization.
+\end{proof}
+
+\begin{theorem} \label{los J alpha preservan epis estrictos}
+The functors $\cc{E}_\alpha \mr{J_\alpha} \cc{E}[S^{-1}]$ preserve strict epimorphisms.
+\end{theorem}
+
+\begin{proof}
+It follows from Propositions \ref{unicidad de la factorizacion} and \ref{factorizacion a travez de epis}.
+\end{proof}
+
+
+
+\begin{proposition}
+Any morphisms  ${X \mr{f/s} Y \in \cc{E}[S^{-1}]}$ admits a strict epic - monic factorization.
+\end{proposition}
+
+\begin{proof}
+For any morphism ${X \mr{f/s} Y \in \cc{E}[S^{-1}]}$ take a cartesian morphisms ${Y^* \mr{t} Y}$ over $F(f)$. We have the following situation.
+
+\begin{align*}
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix{ & X^* \ar[rr]^s \ar@{-->>}[dl]_e \ar@{-->}[dd]^{\exists ! f'} \ar[ddr]^f && X   \\
+		  I \ar@{}[r]|(.6)\equiv \ar@{(>-->}[dr]_m  && \\
+		   & Y^* \ar[r]_t \ar@{}[uur]|(.30)\equiv & Y \\
+		   & F(X^*) \ar[r]^{F(f)} & F(Y)}
+\end{align*}
+
+\noindent The morphisms $m$ and $e$ form a strict epic - monic factorization of $f'$ in the fibre over $F(X^*)$. From Theorem \ref{los J alpha preservan epis estrictos} and the fact that the $J_\alpha$ preserve monics we have that the morphisms $e/s$ and $tm$ yield a strict epic - monic factorization of $f/s$.
+
+\end{proof}
+
+
+\begin{proposition}
+Strict epimorphisms are stable in $\cc{E}[S^{-1}]$.
+\end{proposition}
+
+\begin{proof}
+We will use as reference diagram \ref{pullbacks en el colimite}. Suppose $f_0/{s_0}$ is a strict epimorphism. Then $G^*(a_0)$ is a strict epimorphism in $\cc{E}[S^{-1}]$. Take a strict epic - monic factorization of $G^*(a_0)$ in $\cc{E}_\alpha$. We will take a composite pullback of $G^*(a_0)$ along $G^*(a_1)$ in $\cc{E}_\alpha$.
+
+
+\begin{align*}
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix @+2ex {P  \ar[rr]^p \ar@{->>}[d]_{e'} &{} \ar@{}[d]|{p.b.}  & {G^*}_0 \ar@{->>}[d]_e \ar@/^2pc/[dd]^{G^*(a_0)} \\
+		  I'\ar[rr] \ar@{(>->}[d]_{m'} & {} \ar@{}[d]|{p.b.} & I \ar@{}[r]|(.3)\equiv \ar@{(>->}[d]_{m} & \\
+		  {G^*}_2 \ar[rr]_{G^*(a_1)} && {G^*}_0}
+\end{align*}
+
+\noindent This diagram in fact is also true in $\cc{E}[S^{-1}]$. In fact  in $\cc{E}[S^{-1}]$  we have that $G^*(a_0)$ is a strict epic and consequently $m$ is an isomorphism in $\cc{E}[S^{-1}]$. Therefore $m'$ is an isomorphism in in $\cc{E}[S^{-1}]$ and so $m'e'$ is a strict epimorphisms in $\cc{E}[S^{-1}]$. The result follows.
+\end{proof}
+
+\subsection{Colimit of a Conservative Fibration Over $\cc{A}$}
+Take  $\cc{A}$   a stable set of vertical arrows.
+
+
+\begin{theorem} \label{colimit of conservative fibration}
+If  $F$ is conservative over $\cc{A}$, then for every $\alpha \in \cc{G}$ the functors $\cc{E}_\alpha \mr{J_\alpha} \cc{E}[S^{-1}]$ reflect isomorphisms that are already in $\cc{A}_\alpha$.
+\end{theorem}
+
+\noindent That is to say that if $f \in \cc{A}_\alpha$ and $J_\alpha(f)$ is an isomorphism, then $f$ is an isomorphisms.
+
+\begin{proof}
+Suppose ${X \mr{f} Y \in \cc{A}_\alpha}$ is such that $J_\alpha(f)$ is an isomorphism. Let ${Y \ml{t} Y^* \mr{g} X}$ represent its inverse. Take ${\alpha \mr{\varphi} F(Y^*)}$ such that ${F(t) \cdot \varphi=F(g) \cdot \varphi}=\psi$ and construct the following commutative diagram as indicated below.
+
+\begin{align*}
+\xymatrix @+2ex {Y^{****} \ar[r]^y \ar[d]_{g^{***}} & Y^{***} \ar[r]^v \ar[d]_{g^{**}}& Y^{**} \ar[r]^s \ar[d]_{g^{*}}& Y^* \ar[r]^t \ar[dr]_g & Y \\
+		  X^{***} \ar[r]^x \ar[d]_{f^{***}}& X^{**} \ar[r]^w \ar[d]_{f^{**}}& X^* \ar[rr]^u \ar[d]_{f^{*}} && X \ar[d]^f \\
+		  Y^{****} \ar[r]^y \ar[d]_{g^{***}} & Y^{***} \ar[r]^v \ar[d]_{g^{**}}& Y^{**} \ar[r]^s \ar[d]_{g^{*}}& Y^* \ar[r]^t \ar[dr]_g & Y \\
+      	  X^{***} \ar[r]^x & X^{**} \ar[r]^w & X^* \ar[rr]^u && X \\		 
+      	  F(X^{***}) \ar[r]^{F(x)} & F(Y^{***}) \ar[r]^{F(v)} & \alpha \ar[r]^\varphi & F(Y^*) \ar@/^/[r]^{F(t)} \ar@/_/[r]_{F(g)} & F(X)    }
+\end{align*}
+
+\noindent Take $s$ cartesian over $\varphi$, $u$ cartesian over $\psi$ and the corresponding vertical arrows $g^*$ and $f^*$. So it happens that $f^*g^*=1_{Y^{**}}$ and $g^*f^*=1_{X^*}$ in $\cc{E}[S^{-1}]$. Take $v$ a cartesian morphism such that $(f^*g^*)v=1_{Y^{**}}v$ in $\cc{E}$ followed by $w$ cartesian over $F(v)$. For the corresponding vertical arrows we have that $f^{**}g^{**}=1_{Y^{***}}$ in $\cc{E}$ and $g^{**}f^{**}=1_{X^{**}}$ in $\cc{E}[S^{-1}]$. Take $x$ a cartesian morphism such that $(f^{**}g^{**})x=1_{Y^{***}}x$ in $\cc{E}$ and $y$ cartesian over $F(x)$. It follows that $f^{***}$ and $g^{***}$ are inverse of eachother in the fibre over $F(X^{***})$. The result follows.
+
+
+
+\end{proof}

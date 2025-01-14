@@ -1,0 +1,105 @@
+
+\begin{observation}
+We obtain the following filtered diagram in $\cc{C}at$.
+\[
+\xymatrix{\cc{C} \ar[r]^{j_C} & \cc{C'} \ar[r]^{j_{C'}} & \cc{(C')'} \ar@{-}[r] & \cdots }
+\]
+
+The associated split fibration to this diagram is a fibration $\cc{E} \mr{\cc{F}} {\cc{N}_0}^{op}$ whose base is cofiltered and whose fibers are regular categories. $\cc{C}^{(n)}$ will denote the fiber over $n$. Since the functors $j_{\cc{C}^{(n)}}$ are models, transitions along the fibration preserve finite limits and strict epimorphisms. Thus the hypothesis of Theorem $\tc{red}{ref}$ are satisfied and it follows that the colimit of this fibration $\cc{C}^\infty=colim\cc{F}$ is a a regular cateogory and the morphisms $\cc{C}^{(n)} \mr{J_n} \cc{C}^\infty$ are models.
+\end{observation}
+
+We wish to prove that the representable functor $\cc{C}^\infty \mr{[1,\_]} \cc{E}ns$ is a model. It is well known that covariant representable functors preserve limits. Thus it suffices to prove that this functor preserves strict epimorphisms. 
+
+\begin{definition}
+An object $A$ in a regular category $\cc{C}$ is \textbf{weakly projective} if the functor $\cc{C} \mr{[A,\_]} \cc{E}ns$ is a model.
+\end{definition}
+
+\begin{remark}
+$A$ is weakly projective if and only if given any strict epimorphism $\xymatrix{X \ar@{->>}[r]^{u} &  Y}$  it follows that
+
+\[
+\xymatrix{X \ar@{->>}[rr]^{u} & & Y \\ & & A \ar[u]_{\forall t} \ar@/^/@{.>}[ull]^{\exists} \ar@{}[ul]|(.6){\equiv}}
+\]
+
+We call such a dotted arrow a \textit{lift} of $t$ along $u$.
+\end{remark}
+
+
+\begin{lemma}
+$A$ is weakly projective if and only if every strict epimorphism $\xymatrix{X \ar@{->>}[r]^{u} & A}$ admits a section.
+\end{lemma}
+
+\begin{proof}
+If $A$ is weakly projective, a lift of $1_A$ along the given strict epimorphism yields a section. For the converse let $\xymatrix{X \ar@{->>}[r]^{u} & Y}$ be a strict epimorphism. For a given $A \mr{t} Y$ take a pullback of $u$ along $t$.
+
+\[
+\xymatrix{X \ar@{->>}[r]^{u} \ar@{}[rd]|{p.b.} & Y \\ P \ar@{.>}[u]^{p_1} \ar@{.>}[r]_{p_2} & A \ar[u]_t}
+\]
+
+Since $p_2$ is a strict epimorphism it admits a section $v$. The morphism $p_1v$ is a lift of $t$ along $u$.
+\end{proof} 
+
+\begin{remark}
+The functors $j_{\cc{C}^{(n)}}$ preserve monics with globally supported codomain and are conservative over them. Thus \textit{transitions} along the fibration are conservative over monics with globally supported codomain.
+\end{remark}
+
+\begin{lemma}\label{hacia infinito se reflejan monos con sop global}
+The functors $\cc{C}^{(n)} \mr{J_n} \cc{C}^\infty$ are conservative over monics with globally supported codomain.
+\end{lemma}
+
+\begin{proof}
+ Let $A \mnr{f} B$ in $\cc{C}^{(n)}$ be such that $J_n(f)$ is an isomorphism with inverse $B \mr{gs^{-1}} A$. Let $A^* \mr{t} A$  be a cartesian morphism over $\cc{F}(s)$ and take $g^*$ the unique factorization of $g$ through $t$ over $\cc{F}(B^*)$.  
+ \[ 
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix{B^{**} \ar@{}[dr]|\equiv \ar[d]_{g^{**}} \ar@{.>}[r]^u & B^* \ar[r]^s \ar[rd]^g \ar[d]_{g^*} & B \\
+		  A^{**} \ar@{}[dr]|\equiv \ar@{(>->}[d]_{f^{**}} \ar@{.>}[r]^v & A^* \ar[r]_t  \ar@{}[ur]|(.3)\equiv \ar@{(>->}[d]_{f^*} & A \ar@{(>->}[d]^f\\
+		  B^{**} \ar@{-}[d] \ar@{.>}[r]^u & B^* \ar@{-}[d] \ar@{}[ur]|\equiv \ar[r]_s & B \ar@{-}[d]\\
+		 \cc{F}(B^{**}) \ar@{.>}[r]^{\cc{F}(u)} & \cc{F}(B^*) \ar[r]^{\cc{F}(s)} & n}
+ \]
+ 
+ It follows that $f^*g^*=1_{B^*}$ in $\cc{C}^\infty$, thus there exists $B^{**} \mr{u} B^*$ a cartesian morphism such that $(f^*g^*)u=1_{B^*}u=u$ in $\cc{E}$. Take $A^{**} \mr{v} A^*$ a cartesian morphism over $\cc{F}(u)$. Thus $f^{**}g^{**}=1_{B^{**}}$ in $\cc{E}$, which proves $f^{**}$ is an isomorphism. The result follows. 
+\end{proof}
+
+\begin{proposition}\label{se reflejan objetos con soporte global}
+The functors $\cc{C}^{(n)} \mr{J_n} \cc{C}^\infty$ reflect globally suported objects.
+\end{proposition}
+
+\begin{proof}
+Let $X \in Ob(\cc{C}^{(n)})$ be such that $J_n(X)$ has global support in $\cc{C}^\infty$.  Take a strict epic-monic factorization of $X \mr{f} 1$ in $\cc{C}^{(n)}$.
+
+\[
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix{X \ar[rr]^f \ar@{->>}[dr]_e && 1    \\
+		   & S \ar@{(>->}[ur]_m \ar@{}[u]|(.6)\equiv &  }
+\]
+
+Since $J_n(f)$ and $J_n(e)$ are strict epimorphisms, it follows that $J_n(m)$ is an isomorphism. But by Lemma \ref{hacia infinito se reflejan monos con sop global} $m$ is an isomorphism. The result follows.
+\end{proof}
+
+\begin{remark}\label{una flecha es isomorfa a su imagen}
+For $A \mr{f} B$ in $\cc{C}^{(n)}$, $j_{C^{(n)}}(A) \mr{j_{C^{(n)}}(f)} j_{C^{(n)}}(B)$ is a pullback of $f$ along ${n+1 \mr{} n}$.
+\end{remark}
+
+\begin{theorem}
+1 is weakly projective in $\cc{C}^\infty$.
+\end{theorem}
+
+\begin{proof}
+Let $B \in Ob(\cc{C}^\infty)$ be a globally supported object. Because of Proposition \ref{se reflejan objetos con soporte global} it is globally supported in the fiber over $n=\cc{F}(B)$. Since $j_{\cc{C}^{(n)}}(B)$ is isomorphic to $B$ in $\cc{C}^\infty$ (\ref{una flecha es isomorfa a su imagen}) and we have the canonical section $1 \mr{\Delta_B} j_{\cc{C}^{(n)}}(B)$, the result follows. 
+\end{proof}
+
+\begin{theorem}
+The models $\cc{C}^{(n)} \mr{J_n} \cc{C}^\infty \mr{[1,\_]} \cc{E}ns$ are conservative over monics with globally supported codomain.
+\end{theorem}
+
+\begin{proof}
+Let $\Gamma$ represent the functor $[1,\_]$. We will use the abuse of notation of suppressing the symbol $J_k$ when it is clear that we are viewing an element of a fiber inside of $\cc{C}^\infty$. Let $A \mnr{m} B \in Ar(\cc{C}^{(n)})$ be monic with globally supported codomain in $\cc{C}^{(n)}$ such that $\Gamma(m)$ is an isomorphism (that is to say $\Gamma(J_n(m))$). Since $A \mnr{m} B$ is isomorphic to $j_{\cc{C}^{(n)}}(A) \mnr{j_{\cc{C}^{(n)}}(m)} j_{\cc{C}^{(n)}}(B)$ in $\cc{C}^\infty$ (Remark \ref{una flecha es isomorfa a su imagen}) we have that $\Gamma(j_{\cc{C}^{(n)}}(m))$ is an isomorphism, which in particular means that any section of $j_{\cc{C}^{(n)}}(B) \mr{} 1$ lifts along $j_{\cc{C}^{(n)}}(m)$ in $\cc{C}^\infty$. Take a pullback of $j_{\cc{C}^{(n)}}(m)$ along $\Delta_B$ in $\cc{C}^{(n+1)}$.
+
+\[
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix{j_{\cc{C}^{(n)}}(A) \ar@{(>->}[r]^{j_{\cc{C}^{(n)}}(m)} & j_{\cc{C}^{(n)}}(B)  \\
+		  P \ar@{.>}[u]^{p_1} \ar@{}[ur]|{p.b.} \ar@{(>.>}[r]_{p_2} & 1 \ar[u]_{\Delta_B}}
+\]
+
+It suffices to prove that $p_2$ admits a section in $\cc{C}^{(n+1)}$. This diagram viewed in $\cc{C}^\infty$  is still a pullback and $p_2$ is still monic. Since $\Delta_B$ lifts along $j_{\cc{C}^{(n)}}(m)$ in $\cc{C}^\infty$ we obtain a section of  $p_2$ in $\cc{C}^\infty$. Thus $p_2$ is an isomorphism in $\cc{C}^\infty$. By Lemma \ref{hacia infinito se reflejan monos con sop global} we conclude $p_2$ is an isomorphism in $\cc{C}^{(n+1)}$.
+\end{proof}

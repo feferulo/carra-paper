@@ -1,0 +1,36 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {0.1}Agradecimientos}{2}{section.0.1}%
+\contentsline {section}{\numberline {0.2}CATEGORICAL PRELIMINARIES}{8}{section.0.2}%
+\contentsline {subsection}{\numberline {0.2.1}Regular Categories}{8}{subsection.0.2.1}%
+\contentsline {subsubsection}{Definition}{8}{section*.2}%
+\contentsline {subsubsection}{A few facts}{10}{section*.3}%
+\contentsline {subsection}{\numberline {0.2.2}Multislice Categories of Regular Categories}{11}{subsection.0.2.2}%
+\contentsline {subsubsection}{Finite completeness}{12}{section*.4}%
+\contentsline {subsubsection}{Regularity}{12}{section*.5}%
+\contentsline {subsection}{\numberline {0.2.3}Families of Functors With Common Domain}{13}{subsection.0.2.3}%
+\contentsline {subsection}{\numberline {0.2.4}Weakly Projective Objects}{15}{subsection.0.2.4}%
+\contentsline {section}{\numberline {0.3}PREFIBRED CATEGORIES}{16}{section.0.3}%
+\contentsline {subsection}{\numberline {0.3.1}Basic Notions}{16}{subsection.0.3.1}%
+\contentsline {subsection}{\numberline {0.3.2}Stability in a Prefibration}{19}{subsection.0.3.2}%
+\contentsline {subsubsection}{Pulling back objects and arrows}{19}{section*.6}%
+\contentsline {subsubsection}{Pulling back finite diagrams}{20}{section*.7}%
+\contentsline {subsubsection}{Pulling back cones}{22}{section*.8}%
+\contentsline {subsubsection}{A property equivalent to the stability of pullbacks}{23}{section*.9}%
+\contentsline {subsubsection}{Reflection properties in a prefibration}{25}{section*.10}%
+\contentsline {subsection}{\numberline {0.3.3}Two facts about epimorphisms in a prefibration}{26}{subsection.0.3.3}%
+\contentsline {section}{\numberline {0.4}COLIMIT OF A FIBRATION WITH COFILTERED BASE}{26}{section.0.4}%
+\contentsline {subsection}{\numberline {0.4.1}Colimit of a Finitely Complete Fibration}{27}{subsection.0.4.1}%
+\contentsline {subsection}{\numberline {0.4.2}Colimit of a Regular Fibration}{30}{subsection.0.4.2}%
+\contentsline {subsection}{\numberline {0.4.3}Colimit of a Conservative Fibration Over $\mathcal {A}$}{33}{subsection.0.4.3}%
+\contentsline {section}{\numberline {0.5}CONSTRUCTION OF A REGULAR SET VALUED FUNCTOR THAT IS CONSERVATIVE OVER MONICS WITH GLOBALLY SUPPORTED CODOMAIN FOR ANY REGULAR CATEGORY $\mathcal {A}$ THAT POSSESSES A DISTINGUISHED TERMINAL OBJECT}{34}{section.0.5}%
+\contentsline {subsection}{\numberline {0.5.1}Construction of the Functor from $\mathcal {A}$ to $\mathcal {A'}$ That Sends Globally Supported Objects into Objects That Have a Generic Global Section}{34}{subsection.0.5.1}%
+\contentsline {subsubsection}{A fibration that has $\mathcal {A}$ as its fibres}{34}{section*.11}%
+\contentsline {subsubsection}{Construction of the colimit $\mathcal {A'}$ of the fibration and proof that including the first fibre is conservative over monics with globally supported codomain}{37}{section*.15}%
+\contentsline {subsection}{\numberline {0.5.2}Construction of $\mathcal {A}^{\infty }$ Where 1 is Weakly Projective}{38}{subsection.0.5.2}%
+\contentsline {subsubsection}{A new fibration that has $\mathcal {A}$ as its first fibre, proof that the inclusion of any fibre into the colimit $\mathcal {A}^{\infty }$ is conservative over monics with globally supported codomain and $1 \in \mathcal {A}^{\infty }$ is weakly projective }{38}{section*.18}%
+\contentsline {subsubsection}{The representable functor of $1 \in \mathcal {A}^{\infty }$ is conservative over monics with globally supported codomain}{39}{section*.19}%
+\contentsline {section}{\numberline {0.6}REDUCTIONS}{40}{section.0.6}%
+\contentsline {subsection}{\numberline {0.6.1}A Regular Functor That is Conservative Over Monics With Globally Supported Codomain Suffices}{40}{subsection.0.6.1}%
+\contentsline {subsubsection}{Pullback functor along a monomorphism}{40}{section*.20}%
+\contentsline {subsubsection}{The result}{42}{section*.21}%
+\contentsline {subsection}{\numberline {0.6.2}From a Family $\{h_S\}$ to $h$}{42}{subsection.0.6.2}%

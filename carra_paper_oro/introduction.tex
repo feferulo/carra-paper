@@ -1,0 +1,129 @@
+%\section{INTRODUCTION}
+
+{\bf INTRODUCTION}
+
+The theorem we prove in this work lies in between the realms of \textit{Embedding Theorems} and \textit{Sufficient Points Theorems}. Embedding theorems are those that fully represent an  abstract mathematical object within a concrete one of the same nature. These theorems shed light on the nature of the abstraction itself. Some embeddings where the representation is in a way \emph{canonical} are the following:
+
+\vspace{1ex}
+
+
+1. \emph{Cayley}: $G \mmr{} S!$, $S = Underlying\;set\,(G)$. 
+
+(representation of a group as a subgroup of the symmetric group).
+
+\vspace{1ex}
+
+2. \emph{Stone}: 
+$B \mmr{} Sub(S)$, $S = Prime \; Ideals\,(B)$.
+
+(representation of a boolean algebra as a subalgebra of the algebra of subsets)
+
+\vspace{1ex}
+
+3. \emph{Gelfand}: 
+$A \mmr{} \cc{S}et(S, \bb{C})$, 
+$S = Closed\;Maximal\;Ideals\,(C)$
+
+(representation of a $C^*$-algebra as a subalgebra of the algebra complex valued functions)
+
+\vspace{1ex}
+
+4. \emph{Yoneda}: 
+$\cc{C} \mmr{} \cc{S}et^{\cc{D}}$, $\cc{D} = \cc{C}^{op}$.
+
+(representation of a small category $\cc{C}$ as a full subcategory of a category of $\cc{S}et$-valued functors.
+
+\vspace{1ex}
+
+The next example,  \emph{Barr's Representation Theorem}, is the theorem that concerns us in this work.
+
+{\bf Theorem}
+\emph{For any small regular category $\cc{C}$ there exists a fully faithful regular functor ${\cc{C} \mmr{h} \cc{E}ns^{\cc{D}}}$ into a set valued functor category, where the exponent has as objects the set $Sub(1)$ of subobjects of $1$.} 
+
+
+Barr's original proof as well as all known proofs of this theorem are highly not constructive, using transfinite induction and the axiom of choice. The purpose of this work is to develop a constructive proof of a weaker form of Barr's theorem, namely that the functor $h$ is \emph{conservative} (reflects isomorphisms). This is in fact a \emph{Sufficient Points Theorem}. 
+
+\vspace{1ex}
+
+After the leading work of William Lawvere \textit{completeness theorems} of logical theories were formulated in categorical terms as \emph{Sufficient Points Theorems}. Informally, given a model $A \in \cc{C}$ of a theory $\cc{T}$ in an \emph{appropiate} category $\cc{C}$, any formula $\varphi(x)$ has an extension in $A$ which is a subobject \mbox{$[\![ x \in A \; | \; \varphi(x) \; holds\,]\!] \mmr{} A$.}  The idea is to associate to a theory $\cc{T}$  an \emph{appropiate} category $\cc{C}_{\cc{T}}$ equipped with a model (\emph{the generic model}) $G_{\cc{T}}$ of $\cc{T}$ that is generic in two senses:
+
+\vspace{1ex}
+
+1. It furnishes a (tautological by the very construction of $\cc{C}_{\cc{T}}$) completeness theorem for the theory $\cc{T}$. That is, a formula $\varphi(x)$ is provable in $\cc{T}$ if and only if 
+$[\![ x \in G_{\cc{T}} \; | \; \varphi(x) \; holds\,]\!] = G_{\cc{T}}$.
+
+\vspace{1ex}
+
+2. For any model  $A \in \cc{C}$ of $\cc{T}$ in an appropiate category, there exist a unique \emph{appropiate} functor $\cc{C}_{\cc{T}} \mr{F} \cc{C}$ such that $F(G_{\cc{T}}) = A$.
+
+\vspace{1ex}
+
+\noindent Clearly a \emph{conservative} (thus a \emph{ monic-conservative}, i.e. if a monomorphism is sent by every functor in the family to an isomorphism it is itself an isomorphism) (see \ref{families}) family of appropriate set valued functors ${\cc{C}_{\cc{T}} \mr{F} \cc{E}ns}$ (in some contexts called \emph{points}) yields a completeness theorem.
+
+ For first order intuicionistic geometric logic (that is admitting the intuicionistic propositional calculus and only the existencial quantifier), the appropriate categories are exactly the \emph{regular categories} and the appropriate functors are  \emph{regular functors}. In this way, the weak version of Barr's theorem yields a completeness theorem for these logics using the following argument. Given any regular category $\cc{C}$ we wish to see that the family of regular functors $\cc{C} \mr{} \cc{E}ns$ is conservative. Barr's weak theorem guarantees us that there is a conservative regular functor ${\cc{C} \mr{h} \cc{E}ns^{Sub(1)}}$. Evaluations ${\cc{E}ns^{Sub(1)} \mr{} \cc{E}ns}$ are regular  and the family of evaluations is conservative. The claim follows. 
+
+Independently of these considerations the purpose of this work is to develop a \emph{constructive} proof of the weaker form of Barr's Theorem.
+
+\vspace{1ex}
+
+{\bf Outline of the Construction}
+
+For the construction we followed a guideline set by Andr\'e Joyal in some unpublished talks given in Montreal in the early seventies. His proof was inspired in reinterpreting Leon Henkin's proof by adding constants of the \emph{G\"odel Completeness Theorem} of first order logic.
+
+To carry out the whole proof constructively we need the additional hypothesis that the regular category $\cc{C}$ possesses a distinguished terminal object 1 and that  distinguished subobject representatives for every subobject class exist in $\cc{C}$. These hypothesis will not affect our desired range of applications to logic. That is to say, for first order intuicionistic geometric logic theories the categories $\cc{C}_{\cc{T}}$ verify these additional hypothesis.
+
+We start by constructing for any regular category $\cc{A}$ that possesses a distinguished terminal object 1 a regular functor ${\cc{A} \mr{} \cc{E}ns}$ that is conservative over monics with globally supported codomain (Section \ref{construction of a model from A to Ens}). This is achieved by constructing a regular functor  ${\cc{A} \mr{J_0} \cc{A}^{\infty}}$  where $1 \in \cc{A}^{\infty}$ is weakly projective (thus the functor ${\cc{A}^{\infty} \mr{[1,-]} \cc{E}ns}$ is regular) and such that both $J_0$ and $[1,-]$ are conservative over monics with globally supported codomain. The construction of the functor ${\cc{A} \mr{J_0} \cc{A}^{\infty}}$ is carried out in two stages.
+
+\vspace{1ex}
+
+ In the first stage we construct a functor $\cc{A} \mr{j} \cc{A}'$ in which we ``add" a \emph{generic global section} for each globally supported object in $\cc{A}$ (subsection \ref{thee fibration}). The basis of this construction lies on the following \textit{idea} of how to construct a generic global section for a chosen globally supported object $\xymatrix{B \ar@{->>}[r]^e & 1} \in \cc{A}$. If we had a \emph{choice} of pullbacks along $e$ we would have a faithful regular functor $\cc{A} \mr{e^*} \cc{A}/B$ and a global section of $e(B)$ described in the following diagram.
+ 
+\begin{align*}
+\xymatrix{e^*(1)=B \ar[dr]_{1_B} \ar@{-->}[rr]^{\Delta_B} && B \times B=e^*(B) \ar[dl]^{\pi_2} \\
+		  &B \ar@{}[u]|\equiv}
+\end{align*} 
+
+
+\noindent The section $\Delta_B$ is generic in the following sense:
+
+\vspace{2ex}
+
+\textit{ If $A\ \mnr{m} B \in \cc{A}$ is such that $\Delta_B$ lifts along $m$,}
+\[
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix{A \times B \ar@{(>->}[rr]^{e^*(m)} & & B \times B \\ & & B \ar[u]_{\Delta_B} \ar@{.>}[ull]^{\exists} \ar@{}[ul]|(.6){\equiv}}\ \ 
+\]
+
+\textit{ it follows that $m$ is an isomorphism.}
+
+\vspace{1ex}
+
+
+\noindent That is to say \textit{ if $\Delta_B$ lifts to $A$, then \textbf{every}  global section will lift to $A$} (As a note, in our proof we will not suppose that a choice of pullbacks can be made). In order to add these sections for every globally supported object of $\cc{A}$ leads  to the calculation of the colimit of the following pseudo diagram in $\cc{C}at$ (that is the diagram commutes up to a unique isomorphism).
+
+
+\begin{align}\label{pseudodiagram}
+\xymatrix{   &   \cc{A}/B \ar[dr] \\
+		  \cc{A} \ar[ur] \ar[dr] \ar[rr] && \cc{A}/{B \times B'}=(\cc{A}/B)/{B'}=(\cc{A}/{B'})/{B} \\
+		   & \cc{A}/{B'} \ar[ur] }
+\end{align}
+
+\noindent We construct a fibration whose fibres are isomorphic to the slice categories $\cc{A}/B$ (in fact, since we do not  assume there is a choice of products the fibres cannot be single sliced categories but must be \emph{multislice} categories \ref{slices}) and whose cofiltered base category    contains in \textit{some} way the indexing category of the pseudo diagram above. The inclusion of the fibre $\cc{A}/1$ in the colimit of the fibration is what we take as ${\cc{A} \mr{j} \cc{A}'}$.
+
+The second stage consists of iterating the previous construction, yielding a filtered diagram of regular functors and calculating the filtered colimit $\cc{A}^{\infty}$ of this diagram (In fact we do not take the filtered colimit $\cc{C}at$ but take the colimit of the fibration associated to this diagram which is in fact  \textit{equivalent} to it) (subsection \ref{A infinito}).  
+
+\[
+\xymatrix{\cc{A} \ar[r]^{j} & \cc{A'} \ar[r]^{j'} & \cc{(A')'} \ar@{-}[r] & \cdots \ar [r] & \cc{A}^{\infty}}
+\]
+
+\vspace{1ex}
+
+For our initial category $\cc{C}$ we have thus obtained a regular functor, which we label $\cc{C} \mr{\Gamma_1} \cc{E}ns$, that is conservative over monics with globally supported codomain. In subsection \ref{gamma sub S} we construct a regular functor $\cc{C} \mr{} \cc{E}ns$ for each distinguished subobject ${S \mmr{} 1}$ the is conservative over monics whose codomain is supported in $S$(This is a monic $A \mr{m} B$ for which the strict factorization of $B \mr{} 1$ is through $S$). Thus that family of regular functors indexed by the the set $Sub(1)$ of subobjects of 1 yields a monic conservative family of functors(thus a conservative family (section \ref{families})). 
+
+Lastly in subsection \ref{from family to h} we describe  generic method of constructing a functor $\cc{C} \mr{} \cc{E}ns^{\cc{I}}$  from a given family of functors $\{h_i\}_{i \in I}$ which in our case will yield the desired result.
+
+\vspace{1ex}
+
+{\bf Results}
+
+In order to prove the weaker form of Barr's theorem constructively we developed the concept of \emph{Regular Fibration} which does not apear in the literature and proved \textit{constructively} the fundamental result that the colimit of a regular fibration over a cofiltered category yields a \emph{regular} category. This in fact has as particular case that a filtered colimit of regular categories is a regular category.

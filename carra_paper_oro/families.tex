@@ -1,0 +1,225 @@
+\subsection{Regular Categories}
+In this section we will introduce the basic concepts we need to define  what a regular category is and prove some basic properties these categories satisfy. We will denote with $\cc{C}at$ the category of small categories whose morphisms are functors and $\cc{E}ns$ the category of small sets. 
+
+\subsubsection{Definition}
+
+Let $\cc{C}$ be a small category.  In what follows all the diagrams are in $\cc{C}$.
+
+
+\begin{definition}
+$\cc{C}$ is \textbf{finitely complete} if finite limits exist.
+\end{definition}
+
+\begin{remark}
+$\cc{C}$ is finitely complete if and only if pullbacks exist and a terminal object exists.
+\end{remark}
+
+\noindent We will denote $\cc{C}at_{fl}$ the subcategory of $\cc{C}at$ whose objects are finitely complete categories and whose morphisms are limit-preserving functors.
+
+\begin{observation}
+A morphism $X \mr{f} Y$ is monic if and only if the following diagram is a pullback.
+
+\begin{align*}
+\xymatrix @+3.5ex {X  \ar [r] ^{id_X}  \ar [d] _{id_X}  \ar @{} [dr] |{p.b.}  &  X  \ar [d] ^{f}  \\
+		   X  \ar [r] _{f}  &  Y }
+\end{align*}
+\end{observation}
+
+\begin{proposition}  \label{limit-preserving functors preserve monics}
+If ${\cc{C} \mr{F} \cc{D} \in \cc{C}at_{fl}}$, then $F$ preserves monics.
+\end{proposition}
+
+\begin{proof}
+It is an immediate consequence from the previous observation.
+\end{proof}
+
+For what follows it is useful to have the following result present.
+
+\begin{lemma} \label{mono + retraccion = isomorphism}
+If a monic $\xymatrix {X  \ar  [r] ^{f}  &  Y }$ admits a section, that is there exists a morphism ${Y \mr{h} X}$ such that $fh=id_Y$, then $f$ is an isomorphisms.
+\end{lemma}
+
+
+\begin{proof}
+We have that $f \cdot hf=fh \cdot f=id_Y \cdot f=f \cdot id_X$. Since  $f$ is monic it follows that $hf=id_X$.
+
+\end{proof}
+
+
+
+
+
+\begin{definition}
+For morphisms ${X \mr{f} }Y$ and ${X \mr{g} Z }$ we say that $g$ is \textbf{compatible} with $f$ if for every pair ${W \mrpair{x}{y} X \in \cc{C}}$ such that ${fx=fy}$ it follows that ${gx=gy}$.
+\end{definition}
+
+\noindent We will also express this by saying that $g$ is $f$-compatible.
+
+
+\begin{definition}
+A morphism ${X \mr{f} Y}$ is a \textbf{strict epimorphism} if for every $f$-compatible morphism ${X \mr{g} Z}$  there exists a unique morphism ${Y \mr{h} Z }$ such that $hf=g$.
+
+
+
+\hspace{2.cm} $
+\xymatrix @+5ex {X \ar [r] ^f \ar [d] _{\forall\ f-compatible\ g} & Y \ar @{-->} [dl] ^{\exists !} \\
+		  Z & \ar @{} [ul] |(.7) \equiv}
+$
+\end{definition}
+
+\noindent We will use the symbol $\xymatrix{ \ar @{->>} [r] & }$ to label strict epimorphisms.
+
+\begin{observation}
+Strict epimorphism are epimorphism.
+\end{observation}
+
+
+
+\begin{observation} \label{equivalencia monomorfismo con identidad compatible}
+A morphism ${X \mr{f} Y }$ is monic if and only if $id_X$ is $f$-compatible. 
+\end{observation}
+
+
+
+\begin{proposition} \label{monic + strict epic = isomorphism}
+If ${X \mr{f} Y}$ is monic and a strict epimorphism , then $f$ is an isomorphism.
+\end{proposition}
+
+\begin{proof}
+We will prove that $f$ admits a section. From the previous observation we know there is a unique morphism ${Y \mr{h} X}$ such that the following diagram commutes.
+
+\begin{align*}
+\xymatrix @+5ex {X \ar [r] ^f \ar [d] _{id_X} & Y \ar [dl] ^{h} \\
+		  X & \ar @{} [ul] |(.7) \equiv}
+\end{align*}
+
+\noindent Thus we have that ${fh \cdot f=f \cdot hf=f \cdot id_X=id_Y \cdot f}$. Since $f$ is epic we conclude that $fh=id_Y$. The result follows.
+
+\end{proof}
+
+
+We will use the symbol $\xymatrix {\ar @{>->} [r] & }$ to label monomorphisms. A monomorphism $\xymatrix {A\ \ar @{>->} [r] & Y }$ will be called a \textit{subobject} of Y. Consider the following commutative diagram. 
+
+\begin{align*}
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix @+2.5ex {X \ar [rr] ^{f} \ar [dr] _{e} && Y \\ 
+		  & A \ar @{} [u] | (.6) \equiv \ar @{(>->} [ur] _{m} }
+\end{align*}
+
+\noindent We will say the pair $\xymatrix {X \ar [r] ^{e} & A\ \ar @{>->} [r] ^{m} & Y }$ is a \textit{factorization of $f$ through a subobject of $Y$}. If $e$ is a strict epimorphism we call the pair $\xymatrix {X \ar @{->>} [r] ^{e} & A\ \ar @{>->} [r] ^{m} & Y }$ a \textit{strict} factorization of $f$.
+
+\begin{remark}
+A strict factorization $\xymatrix {X \ar @{->>} [r] ^{e} & A\ \ar @{>->} [r] ^{m} & Y }$ of $f$ is universal with respect to every factorization of $f$ throught subobjects of $Y$. That is if $\xymatrix {X \ar [r] ^{e'} & A'\ \ar @{>->} [r] ^{m'} & Y }$ is a factorization of $f$ through a subobject of $Y$, then there exists a unique $A \mr{s} A'$ such that $se=e'$ and $m's=m$.
+\end{remark}
+
+Consider the following pullback diagram.
+\begin{align*}
+ \xymatrix @+3.5ex {A \ar [r] \ar [d] _{f'} & B \ar [d] ^{f} \\ 
+		   D \ar [r] _{g} \ar @{} [ur] |{p.b.} & C } 
+\end{align*}
+
+\noindent We will call $f'$ a \textit{pullback of $f$} \textit{along} $g$ or simply a \textit{pullback of $f$}.
+
+\begin{definition}
+Strict epimorphisms are \textbf{stable} if a pullback of a strict epimorphism is a strict epimorphism.
+\end{definition}
+
+\begin{definition}
+$\cc{C}$ is \textbf{regular} if finite limits exist, strict factorizations exist for every morphism and strict epimorphisms are stable.
+\end{definition}
+
+
+\noindent We will denote $\cc{R}eg$ the subcategory of $\cc{C}at$ whose objects are regular categories and whose morphisms are limit-preserving functors that preserve strict factorizations. We call the morphisms in $\cc{R}eg$ \textit{regular} functors.   $\cc{R}eg$ is in fact a subcategory of  $\cc{C}at_{fl}$.
+
+ 
+\subsubsection{A few facts} 
+ In what follows $\cc{C}$ represents a regular category.
+
+
+
+\begin{proposition}\label{strict epics are closed under composition}
+Strict epimorphisms are closed under composition.
+\end{proposition}
+
+\begin{proof}
+Take composable strict epimorphisms $\xymatrix {X \ar @{->>} [r] ^{f} & Y \ar @{->>} [r] ^{g} & Z }$ and take $\xymatrix {X \ar @{->>} [r] ^{e} & A\ \ar @{>->} [r] ^{m} & Z }$ a  strict factorization of $gf$. We will prove $m$ is an isomorphism. It suffices to prove that $m$ admits a section. We have that  $e$ is $f$-compatible because $m$ is monic. Thus there exists a unique $h$ such that $hf=e$.
+
+  
+\begin{align*}
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix @+5ex {X  \ar @{->>} [r] ^{f}  \ar @{->>} [dr] _{e} &  Y  \ar @{->>} [r] ^{g}  \ar @{-->} [d] _{\exists ! h}  \ar @{} [dl] |(.3){\equiv}  \ar @{} [dr] |(.3){\equiv}  &  Z  \\
+		   & A  \ar @{(>->} [ur] _{m}   &  }
+\end{align*}
+
+
+$$
+\xymatrix
+     {
+      X \ar[r]^{P} \ar[rd]^{t} 
+    & Y \ar[d]^{} \ar[r]^{u} 
+    & Z
+   \\
+    & A \ar[ru]^{a}
+     }
+$$
+   
+
+
+\noindent  Since $f$ is epic we also have that $mh=g$. Because $m$ is monic $h$ is $g$-compatible. Thus there exists a unique $Z \mr{h'} A$ such that $h'g=h$. Composing with $m$ we obtain that $mh' \cdot g= id_Y \cdot g $ and since $g$ is epic we have that $mh'=id_Y$. The result follows.
+
+\end{proof}
+
+
+\begin{definition} \label{globally supported}
+An object $X$ is \textbf{globally supported} if for every terminal object $1$ the unique morphism $X \mr{} 1$ is a strict epimorphism.
+\end{definition}
+
+\begin{observation}
+If for any terminal object $1$ the unique morphism $X \mr{} 1$ is a strict epimorphism, then $X$ is globally supported.
+\end{observation}
+
+
+ Let $[n]=\{0,1,2,...,n-1\}$ denote the finite ordinal. Take a product $\{P \mr{\pi_i} B_i\}_{i \in [n]}$ of the family $\Bi$. 
+ 
+\begin{observation} 
+For $B_{n} \in \cc{C}$ we can calculate a product of the family $\{B_i\}_{i \in [n+1]}$ taking the following pullback.
+
+\begin{align*}
+\xymatrix{P'  \ar [r]  \ar [d] _{\hat{\pi}_n}  &  B_{n}  \ar[d]  \\
+		  P  \ar [r]  \ar @{} [ur] |{p.b.}  &  1}
+\end{align*} 
+
+The morphism $\hat{\pi}_n$ can be interpreted as \textit{truncating the $n^{th}$ coordinate}. 
+\end{observation} 
+ 
+\begin{lemma}
+If $B_{n}$ is globally supported, then truncating the $n^{th}$ coordinate $P' \mr{\hat{\pi}_n} P$ is a strict epimorphism.
+\end{lemma}
+
+\begin{proof}
+It is immediate from the previous diagram.
+\end{proof}
+
+\begin{corollary} \label{projectar es epi estricto}
+If the objects of the family $\Bi$ are globally supported, then every projection $P \mr{\hat{\pi}_i} B_i$ is a strict epimorphism. Consequently $P$ is globally supported.
+\end{corollary}
+
+\begin{proof}
+The result follows from that fact that strict epimorphisms are closed under composition and that truncating one coordinate at a time we reach to the desired projection. 
+\end{proof}
+
+The following result will be useful throughout the thesis.
+\begin{proposition}
+If  $\cc{D}$ is a regular category and $\cc{C} \mr{F} \cc{D}$ is  a limit-preserving functor, the the following are equivalent:
+
+\begin{itemize}
+\item  $F$ is a regular functor.
+\item  $F$ preserves strict epimorphisms.
+\end{itemize}
+
+\end{proposition}
+
+\begin{proof}
+It follows from Proposition \ref{limit-preserving functors preserve monics}.
+\end{proof}
+

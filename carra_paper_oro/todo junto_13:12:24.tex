@@ -1,0 +1,497 @@
+\documentclass[12pt]{article}
+%\documentclass[a4paper, 12pt]{amsart}
+%\documentclass{book}
+
+%[a4paper, 11pt]
+
+
+\usepackage{geometry}\geometry{top=5cm,bottom=2cm,left=3cm,right=3cm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+
+\sloppy
+\input xy   
+\xyoption{all}
+%\swapnumbers
+\usepackage{amsmath, amsthm, amsfonts, amssymb}
+\usepackage{enumerate}
+\usepackage{stackrel}
+\usepackage{colordvi}
+\usepackage{hyperref}
+%\usepackage[latin1]{inputenc}
+\usepackage[english]{babel}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+\usepackage{stmaryrd}
+
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+  \begingroup
+        \newtheorem{theorem}[equation]{Theorem}
+        \newtheorem{lemma}[equation]{Lemma}
+        \newtheorem{proposition}[equation]{Proposition}
+        \newtheorem{corollary}[equation]{Corollary}
+        \newtheorem{fact}[equation]{Fact}
+        \newtheorem{facts}[equation]{Facts}
+        \newtheorem{assumption}[equation]{Assumption}
+        \newtheorem{remarkitalica}[equation]{Remark}
+	    \newtheorem{definition}[equation]{Definition}
+        \newtheorem{notation}[equation]{Notation}
+        \newtheorem{convention}[equation]{Convention}
+        \newtheorem{sinnadaitalica}[equation]{}
+        \newtheorem{construction}[equation]{Construction}
+
+\endgroup
+
+\theoremstyle{definition}
+  \begingroup
+        \newtheorem{remark}[equation]{Remark}
+        \newtheorem{example}[equation]{Example}
+        \newtheorem{sinnadastandard}[equation]{}
+        \newtheorem*{observation}{Observation}
+        \newtheorem{nobservation}[equation]{Observation}
+        \newtheorem{definitionst}[equation]{Definition}
+\endgroup
+
+
+\newcommand{\cqd}{\hfill$\Box$}  %fin de demostracion%
+
+\newcommand{\cqdhere}{$\Box$}    %fin de demostracion en el lugar%
+
+\newcommand{\car}{\circ}    
+
+\newcommand{\rojo}{\textcolor{red}}  %comentario%
+\newcommand{\azul}{\textcolor{blue}}
+\newcommand{\blanco}{\textcolor{white}}
+\newcommand{\verde}{\textcolor{green}}
+\newcommand{\rosa}{\textcolor{magenta}}
+
+\newcommand{\erojo}{\color{red}}  %comentario%
+\newcommand{\eazul}{\color{blue}}
+\newcommand{\eblanco}{color{white}}
+\newcommand{\everde}{color{green}}
+\newcommand{\erosa}{\color{magenta}}
+
+
+              % comandos para letras en math mode %
+
+\newcommand{\cc}{\mathcal}
+\newcommand{\bb}{\mathbb}
+\newcommand{\ff}{\mathsf}
+\newcommand{\nn}{\mathbf}
+\newcommand{\rr}{\mathrm}
+
+\newcommand{\lm}{\ell}
+\newcommand{\im}{\imath}
+\newcommand{\jm}{\jmath}
+
+                   % comandos para flechas %
+                   
+
+%\newcommand{\Mr}[1]{\stackrel{#1}{\Rightarrow}}
+%\newcommand{\Mrl}[1]{\stackrel{#1}{\Longrightarrow}}
+%\newcommand{\Ml}[1]{\stackrel{#1}{\Leftarrow}}
+%\newcommand{\Mll}[1]{\stackrel{#1}{\Longleftarrow}}
+\newcommand{\xr}[1]{\xrightarrow{#1}}
+\newcommand{\xl}[1]{\xleftarrow{#1}}
+\newcommand{\Xr}[1]{\xRightarrow{#1}}
+\newcommand{\Xl}[1]{\xLeftarrow{#1}}
+\newcommand{\mmmr}[1]{\buildrel {#1} \over \hookrightarrow}
+\newcommand{\mvr}[1]{\xymatrix{{} \ar@{~>}[r]^{#1} & {}}}
+
+
+\newcommand{\mr}[1]{\overset {#1} {\longrightarrow}}
+\newcommand{\ml}[1]{\overset {#1} {\longleftarrow}}
+
+\newcommand{\tocar}{\xymatrix{{} \ar[r]|\car & {}}}
+
+\newcommand{\mmr}[1]{\overset {#1} {\hookrightarrow}}
+
+\newcommand{\Mr}[1]{\overset {#1} {\Longrightarrow}}
+\newcommand{\Ml}[1]{\overset {#1} {\Longleftarrow}}
+
+\newcommand{\mrpairviejo}[2]
+   {
+    \xymatrix@C=5ex@R=2.4ex
+            {
+             {} \ar@<1.6ex>[r]^{#1} 
+	            \ar@<-1.1ex>[r]^{#2} 
+	         & {}
+            }
+   }
+
+
+\newcommand{\mrpair}[2]
+   {
+    \xymatrix@C=5ex@R=2.4ex
+            {
+             {} \ar@<.5ex>[r]^{#1} 
+	            \ar@<-.5ex>[r]_{#2} 
+	         & {}
+            }
+   }
+
+
+\newcommand{\mlpair}[2]
+   {
+    \xymatrix@C=5ex@R=2.4ex
+            {
+             {} 
+              & {} \ar@<1.0ex>[l]_{#2} 
+	          \ar@<-1.7ex>[l]_{#1}
+            }
+    }
+
+                    % comandos para 2-celdas %
+
+\newcommand{\cellrd}[3] % flechas para adelante, cell para abajo %
+ {
+  \xymatrix@C=7ex@R=2.4ex
+         {
+          {} \ar@<1.6ex>[r]^{#1} 
+             \ar@{}@<-1.3ex>[r]^{\!\! {#2} \, \!\Downarrow}
+             \ar@<-1.1ex>[r]_{#3} 
+          & {}
+         }
+ }
+ \newcommand{\modif}[3] % flechas para adelante, cell para abajo %
+ {
+  \xymatrix@C=7ex@R=2.4ex
+         {
+          {} \ar@<1.6ex>@{=>}[r]^{#1} 
+             \ar@{}@<-1.3ex>@{=>}[r]^{\!\! {#2} \, \!\downarrow}
+             \ar@<-1.1ex>[r]_{#3} 
+          & {}
+         }
+ }
+
+\newcommand{\cellld}[3] % flechas para atras, cell para abajo %
+ {
+  \xymatrix@C=6ex@R=2.4ex
+         {
+            {} 
+          & {} \ar@<1.0ex>[l]^{#3} 
+          \ar@{}@<-1.7ex>[l]^{\!\! {#2} \, \!\Downarrow}
+	                                 \ar@<-1.7ex>[l]_{#1}
+         }
+ }
+
+\newcommand{\cellpairrd}[4] % como \cellrd pero con dos cells %
+ {
+  \xymatrix@C=10ex@R=2.4ex
+         {
+          {} \ar@<1.6ex>[r]^{#1} 
+             \ar@{}@<-1.3ex>[r]^{\!\! {#2} \, \!\Downarrow 
+                                 \;\; {#3} \, \!\Downarrow }
+             \ar@<-1.1ex>[r]_{#4} 
+          & {}
+         }
+ }
+
+                 % comandos para bilimites %
+
+
+
+\newcommand{\coLim}[2]
+   {
+    \underset{#1}{\underrightarrow{\ff{Lim}}}
+    \; {#2}
+   }
+
+\newcommand{\Lim}[2]
+   {
+    \underset{#1}{\underleftarrow{\ff{Lim}}}
+    \; {#2}
+   }
+
+   
+\newcommand{\biLim}[2]
+   {
+    \underset{#1}{\underleftarrow{\ff{biLim}}}
+    \; {#2}
+   }
+   % comandos para limites % 
+
+\newcommand{\bicoLim}[2]
+   {
+    \underset{#1}{\underrightarrow{\ff{biLim}}}
+    \; {#2}
+   }
+\newcommand{\colimite}[2]
+   {
+    \underset{#1}{\underrightarrow{lim}}
+    \; {#2}
+   }
+
+\newcommand{\limite}[2]
+   {
+    \underset{#1}{\underleftarrow{lim}}
+    \; {#2}
+   }
+
+
+ % COMANDOS DE ASCENSORES PARA USAR DENTRO DE UN \xymatrix %
+ %                Fijarse las redefiniciones:              %
+ %          s = source, t = target, d = down, u = up       %
+ %     la regla es de cuantas s a cuantas t va la celda    %
+ 
+\newcommand{\dst}{\dcell}
+\newcommand{\dcell}[1]  % celda down %
+          {
+					 \ar@<8pt>@{-}[d]+<-4pt,8pt> 
+           \ar@<-8pt>@{-}[d]+<4pt,8pt>
+           \ar@{}[d]|{#1}
+          }
+
+\newcommand{\dstb}{\dcellb}
+\newcommand{\dcellb}[1]   % celda ancha down %
+          {
+           \ar@<10pt>@{-}[d]+<-5pt,8pt> 
+           \ar@<-10pt>@{-}[d]+<5pt,8pt>
+           \ar@{}[d]|{#1}
+          }
+
+\newcommand{\deq}        % identidad down %
+         {
+          \ar@{=}[d]
+         }
+        
+\newcommand{\dreq}       % identidad down right %
+         {
+          \ar@{=}[dr]
+         }
+
+\newcommand{\dleq}       % identidad down left %
+         {
+          \ar@{=}[dl]
+         }
+
+\newcommand{\dstt}{\dccell}
+\newcommand{\dccell}[1]    % celda de uno a dos lugares down % 
+          {
+           \ar@{-}[ld] 
+           \ar@{-}[rd] 
+           \ar@{}[d]|{#1}  
+          }
+
+\newcommand{\dcellbb}[1]   % celda mas ancha down %
+          {
+           \ar@<20pt>@{-}[d]+<-10pt,12pt> 
+           \ar@<-20pt>@{-}[d]+<10pt,12pt>
+           \ar@{}[d]|{#1}
+          } 
+%\newcommand{\dsstt}{\dcccell}
+%\newcommand{\dcccell}[1]    % celda de dos a dos lugares down % 
+%          {                        % HAY QUE MEJORARLA %
+%           \ar@<6.5pt>@{-}'+<0pt,-2pt>[d] 
+%           \ar@<-6.5pt>@{-}'+<0pt,-2pt>[d] 
+%           \ar@{}[d]|{#1}  
+%          }
+
+
+
+%%%%%%%%PARA HACER CELDAS DEL TAMANO QUE UNO QUIERA%%%%%%%%%%%%%%
+\newcommand{\dl}    % una raya para poner a la izquierda (inclinada) % 
+          {                        
+           \ar@<-2pt>@{-}[d]+<4pt,8pt>
+          }
+
+\newcommand{\dr}    % una raya para poner a la derecha (inclinada) % 
+          {                        
+           \ar@<2pt>@{-}[d]+<-4pt,8pt> 
+          }
+\newcommand{\dc}[1]    % para poner el label en el centro % 
+          {                        
+           \ar@{}[d]|{#1}  
+          }
+\newcommand{\dcr}[1]    % para poner el label en el centro a la derecha para tamanos impares% 
+          {                        
+           \ar@{}[dr]|{#1}  
+          }
+
+
+
+\newcommand{\ustt}{\uccell}
+\newcommand{\uccell}[1]      % celda de uno a dos lugares up %
+          { 
+           \ar@{-}[ur] 
+           \ar@{}[u]|{#1} 
+           \ar@{-}[ul] 
+          }
+
+\newcommand{\usttb}{\uccellb}          
+\newcommand{\uccellb}[1]     % celda ancha de uno a dos lugares up %
+          { 
+           \ar@<-1ex>@{-}[ur] 
+           \ar@{}[u]|{#1} 
+           \ar@<1ex>@{-}[ul] 
+          }
+
+
+\newcommand{\dcellop}[1]  % celda down abriendo %
+          {
+					 \ar@<6pt>@{-}[d]+<6pt,8pt> 
+           \ar@<-6pt>@{-}[d]+<-6pt,8pt>
+           \ar@{}[d]|{#1}
+          }
+
+
+\newcommand{\dcellopb}[1]  % celda down abriendo mas ancha%
+          {
+					 \ar@<7pt>@{-}[d]+<7pt,8pt> 
+           \ar@<-7pt>@{-}[d]+<-7pt,8pt>
+           \ar@{}[d]|{#1}
+          }
+
+\newcommand{\did}{\ar@2{-}[d]}
+
+\newcommand{\op}[1]
+          {
+           \ar@{-}[ld] 
+           \ar@{-}[rd] 
+           \ar@{}[d]|{#1}  
+          }
+
+\newcommand{\cl}[1]
+          { 
+           \ar@{-}[ur] 
+           \ar@{}[u]|{#1} 
+           \ar@{-}[ul] 
+          }
+
+
+\newcommand{\Pro}[1]{2\hbox{-}\cc{P}ro(\cc{#1})}
+
+\newcommand{\tc}{\textcolor}
+
+	\newcommand{\Bi}
+		{
+		\{B_i\}_{ i \in [n]}
+		}
+		
+\newcommand{\Cj}
+		{
+		\{C_j\}_{ j \in [m]}
+		}
+
+\newcommand{\mnr}[1]{\xymatrix{{} \ar@{>->}[r]^{#1} & {}}}%monos comunes
+
+\newcommand{\intnat}[1]{[ {#1} ]} %intervalo natural hasta n
+
+%\newcommand{\subC}[2]{\cc{#1}_{\cc{C}^{#2}}}
+\newcommand{\subC}[2]{\cc{#1}_{\cc{A}^{#2}}}
+
+
+\begin{document} 
+
+ %    puta 
+
+%\end{document}
+
+\title{Demostraci\'on constructiva del teorema de Barr}
+
+\author{Federico Carr\'a, Eduardo J. Dubuc}
+
+\date{\vspace{-5ex}}
+
+\maketitle
+
+\begin{abstract}
+xx%change abstract just to check editor works well ////
+\end{abstract}
+
+
+
+\input{introduction_v2.tex}
+
+%\pagebreak
+
+\tableofcontents
+
+
+%\pagebreak
+%%% Body of the thesis
+
+\section{CATEGORICAL PRELIMINARIES}\label{preliminares}
+
+\input{families_v2.tex}
+
+\input{slice_v2.tex}
+
+\input{weaklyprojective_v2.tex}
+
+\input{fibrations_v2.tex}
+
+\input{unoprojunobis_v2.tex}
+
+\input{unoprojdosbis_v2.tex}
+
+\input{reduction_v2.tex}
+%\pagebreak
+%%%%% end Body of the thesis
+
+\bibliographystyle{unsrt}
+
+\begin{thebibliography}{99}
+
+\bibitem{bordos}
+Borceux, Francis, \emph{Handbook of categorical algebra}, 2, volume 51 of Encyclopedia of Mathematics and its Applications, Cambridge University Press, Cambridge (1994).
+
+\bibitem{sga1}
+Grothendieck, Alexander, Raynaud, Michele
+\emph{Rev\^etements \'etales et groupe fondamental (SGA 1)}, 
+arXiv preprint math/0206203, (2002).
+
+\bibitem{sga4}
+Artin, M and Grothendieck, A and Verdier, J
+\emph{SGA 4,(1963-64)}, 
+Springer Lecture Notes in Mathematics 270, (1972).
+
+\bibitem{gabzis} Gabriel, Peter and Zisman, Michel, 
+\emph{Calculus of fractions and homotopy theory},
+Springer xxxx  6  (1967).
+
+\bibitem{tesemi} Descotte, Mar\'ia Emilia, 
+\emph{Una Generaliciaci\'on de la Teor\'ia de Ind-objetos de Grothendieck a 2-Categor\'ias}, Tesis de Licenciatura,
+Universidad de Buenos Aires, (2010).  
+
+\bibitem{whitney} Scholz, Erhard, 
+\emph{History of topology}, pp 25-64, 
+Dordrecht: Kluwer, (1999).
+
+\end{thebibliography}
+
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% COMENT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\begin{proof}
+For each $i$ consider the following commutative diagram in $\cc{C}$
+
+\[
+\xymatrix{P \ar[rr]^{\pi_1} \ar[dr]_{\pi_2} \ar@{}[drrr]|{p.b.} &   & X 
+\ar[dd]_(.7){x_i}|!{[dl];[dr]}\hole \ar[dr]^f & \\ 
+		   &  Y \ar[rr]^(.6)g \ar@/_/[dr]_{y_i}  & & Z \ar@/^/[dl]^{z_i}
+\\
+		   & & B_i &			    }
+\]
+
+This diagram determines a cone for $f$ and $g$ in $\cc{C}_{/\Bi}$. It follows from Remark \ref{props de F} that this cone is a pullback.
+\end{proof}
+
+\begin{observation}
+If  distinguished pullbacks exist in $\cc{C}$, then  distinguished pullbacks exist in $\cc{C}_{/\Bi}$ and $\Sigma$ preserves them.
+\end{observation}
+
+
+\begin{remark}\label{slice have terminal object}
+If a product of the family $\Bi$ exists, then the family of its projections  $\{P \mr{\pi_i} B_i\}_{i \in [n]}$ form a terminal object of the multislice category.
+\end{remark}
+
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

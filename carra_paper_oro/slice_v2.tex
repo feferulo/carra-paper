@@ -1,0 +1,558 @@
+\subsection{Multislice Categories of Regular Categories} \label{slices}
+In this section we will define what a multislice category is and prove that  multislice categories of finitely complete categories and  of regular categories are finitely complete and regular, respectively.
+
+\begin{definition}
+For a category $\cc{C}$ and a family $\Bi$ of objects of $\cc{C}$ we define the \emph{multislice category} $\cc{C}_{/\Bi}$ whose objects are families 
+${\{X \mr{x_i} B_i\}_{ i \in [n]}}$ of arrows of $\cc{C}$ and morphisms ${\{X \mr{x_i} B_i\}_{ i \in [n]} \mr{f} \{Y \mr{y_i} B_i\}_{ i \in [n]}}$ are arrows $X \mr{f} Y$ in $\cc{C}$ such that for every ${ i \in [n]}$
+
+\[
+\xymatrix{X \ar[rr]^f \ar[dr]_{x_i} && Y \ar[dl]^{y_i}
+\\
+		    & B_i \ar@{}[u]|(.6)\equiv & }
+\]
+\end{definition}
+
+\begin{remark} \label{Sigma}
+Clearly there is a forgetful functor,   
+$\cc{C}_{/{\{B_i\}_{i \in I}}} \mr{\Sigma} \cc{C}$\,, 
+\mbox{$\Sigma({\{X \mr{x_i} B_i\}_{ i \in [n]}} \,=\, X$, $\Sigma(f) = f$,}
+which is faithful and reflects isomorphisms. We will refer to this functor  as \emph{the functor $\Sigma$}. \cqd
+\end{remark}
+
+%\end{document}
+The following holds by definition of products:
+ \begin{remark} \label{propSigma}
+Let ${\{B \mr{\pi_i} B_i\}_{ i \in [n]}}$ be a product diagram in $\cc{C}$, then the functor:
+$$
+\cc{C}_{/B}  \mr{\Phi}  \cc{C}_{/\Bi}: \hspace{6ex} 
+\Phi(X \mr{x} B)  \;=\;  {\{X \xr{\pi_i  x} B_i\}_{ i \in [n]}}
+$$
+and $\Phi(f) = f$ on arrows, establishes an isomorphism of categories. Furthermore the family of its projections is a terminal object in the multislice category.
+\end{remark}
+The reason we consider multislice categories is not that we want to work with categories lacking products, but lacking a distinguished choice of products.
+
+\emph{For categories with finite products we can use this Remark to transport to multislice categories the properties of slice categories.}
+
+Though properties needed here may be proven directly for multislice categories, to simplify the notation we will do the proofs for slice categories and then use this remark.
+
+
+
+%\end{document}
+%\begin{remark}\label{props de F}
+%The domain functor $\cc{C}_{/{\{B_i\}_{i \in I}}} \mr{\Sigma} \cc{C}$ is faithful, conservative and preserves pullbacks. It follows that $\Sigma$ reflects monomorphisms and pullbacks (\ref{con pullback reflejo monos}).
+%\end{remark}
+
+\begin{remark} \label{adjuntoderecha}
+Let $X \in \cc{C}$, let  
+$B \ml{\pi_2} E \mr{\pi_1}  X$ be a product diagram in $\cc{C}$, and let 
+$Y \mr{y} B \, \in \, \cc{C}_{/B}$.  Define $\Pi(X) = (E \xr{\pi_2} B)$, then we have:
+
+$$
+\xymatrix@C=4ex@R=2ex
+     {
+      Y \ar@/^0.8pc/[drr]^{g}
+        \ar@/_0.8pc/[ddr]^{y} 
+        \ar[dr]^f
+    \\
+    & E \ar[d]^{\pi_2}
+        \ar[r]^{\pi_1}
+    & X
+   \\
+    & B
+     }
+\hspace{8ex} 
+\xymatrix@C=5ex@R=0ex
+     {
+      & (Y \xr{y} B) \ar[r]^f  &  \Pi(X) %(E \xr{\pi_2} B)
+     \\
+     {} \ar@{-}[rrr] &&& {}
+     \\
+      & \Sigma(Y \xr{y} B)  \ar[r]^g & X
+     }
+$$    
+By definition of product the diagram on the left establishes a bijective correspondence between the arrows $f$ and $g$, which is the same that the  correspondence  indicated in the right diagram. This shows that the object $\Pi(X) \in \cc{C}_{/B}$ is the value at $X$ of a right adjoint to the functor $\Sigma$, the defining universal property shows it is defined in arrows in a way that preserves composition, compare with Definition \ref{pbk1}.
+ 
+It follows that \emph{when the product $E$ exists the functor $\Sigma$ will preserve any colimit that may exists in $\cc{C}_{/B}$}.
+
+
+ \cqd
+\end{remark}
+
+The following is immediate and very easy to prove:
+{
+%\eazul
+\begin{proposition}\label{p-pulback}
+The category  $\cc{C}_{/\Bi}$ inherits any pull-back that exists in $\cc{C}$, moreover the functor $\Sigma$ preserves and reflects pull-backs. It follows it always preserves and reflects monomorphisms \cqd
+\end{proposition} 
+}
+
+Since as observed in \ref{propSigma} for a category with finite products any multislice category has terminal objects, it follows:
+\begin{proposition} \label{finitelycomplete}
+If $\cc{C}$ is finitely complete, then $\cc{C}_{/\Bi}$ is finitely complete.
+\cqd
+\end{proposition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% COMENTARIO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+\begin{proposition} \label{reflexepi}
+The functor $\Sigma$ reflex and preserves strict epimorphism.
+\end{proposition}
+\begin{proof}
+Let $(X \mr{x} B) \mr{f} (Y \mr{y} B)$ be an arrow in 
+$\cc{C}_{/B}$. We will argue below referring to the following diagram:
+$$
+\xymatrix
+    {
+     C \ar@<.5ex>[r]^r 
+       \ar@<-.5ex>[r]_s 
+       \ar@/_1.3pc/[ddrr]^{c} 
+   & X \ar[rr]^f 
+       \ar[dr]^g 
+       \ar@/_/[ddr]^{x} 
+  && Y \ar@/^/[ddl]^{y} 
+       \ar[dl]_{h}
+\\ 
+  && Z \ar[d]^{z} 
+  & 
+\\
+  && B 	
+  &		  
+     }
+$$
+\emph{reflex}: Assume $f$ is a strict epimorphism in $\cc{C}$. Let 
+$C \mrpair{r}{s} X$ any two arrows in $\cc{C}$, and
+$(X \mr{x} B) \mr{g} (Z \mr{z} B)$ a $f$-compatible arrow in $\cc{C}_{/B}$. Composing with $x$ we have $C \mrpair{xr}{xs} B$, so that $r,\;s$ determine arrows in  
+$\cc{C}_{/B}$. This shows that $g$ is also \mbox{$f$-compatible} in 
+$\cc{C}$, so we have a unique arrow $h$ such that $hf = g$ in $\cc{C}$. Since $f$ is also an epimorphism, it follows that $zh = y$, thus $h$ is an arrow in $\cc{C}_{/B}$.
+
+\vspace{1ex}
+
+\noindent \emph{preserves}: Assume $f$ is a strict epimorphism in 
+$\cc{C}_{/B}$.
+% Let $(C \mr{c} B) \mrpair{r}{s}  (X \mr{x} B)$ be any two arrows in $\cc{C}_{/B}$, and 
+Let $C \mrpair{r}{s} X$ be any two arrows in $\cc{C}$, as before they determine two arrows in $\cc{C}_{/B}$, and let 
+$(X \mr{x} B) \mr{g} (Z \mr{z} B)$ be a $f$-compatible arrow  in 
+$\cc{C}_{/B}$. It follows there is a unique $h$, $hf = g$ in $\cc{C}_{/B}$, and since the functor  
+$\Sigma$ is faithful, $h$ is also uniqe in $\cc{C}$. 
+\end{proof}
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIN COMENTARIO %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ From Remaks \ref{kernelpair}, \ref{adjuntoderecha}, and Proposition 
+ \ref{p-pulback} if follows:
+ \begin{proposition}\label{preserves}
+ If $\cc{C}$ has pullbacks and binary products, then the functor $\Sigma$ preserves strict epimorphisms. 
+ \end{proposition}
+ 
+ \begin{proposition} \label{reflects}
+The functor $\Sigma$ always reflects strict epimorphisms.
+\end{proposition}
+\begin{proof}
+Let $X \mr{f} Y$ be a strict epimorphism in $\cc{C}$. We want to prove that any 
+$$
+(X \mr{x} B) \mr{f} (Y \mr{y} B)
+\hspace{10ex} 
+\xymatrix 
+     {
+      X \ar[rr]^{f} 
+        \ar@/_5pt/[rd]^{x}
+   && Y \ar@/^5pt/[ld]_{y}
+  \\ 
+    & B
+     }
+$$    
+is a strict epimorphism in $\cc{C}_B$. Let $g$ be a $f$-compatible arrow in 
+$\cc{C}_B$
+$$
+(X \mr{x} B) \mr{g} (Z \mr{y} B)
+\hspace{10ex}
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix
+    {
+     X \ar[rr]^f 
+       \ar@{->>}[dr]_g 
+       \ar@/_/[ddr]_{x} 
+  && Y \ar@/^/[ddl]^{y} 
+   \\  
+   & Z %\ar@{}[u]|(.6){\equiv} 
+       \ar[d]^(.43){z} 
+   &
+    \\
+   & B    
+   &	          }
+$$ 
+ We want to see that $g$ is $f$-compatible in $\cc{C}$. Let $C \mrpair{r}{s} X$ in $\cc{C}$ be such that $fr = fs$. Since $xs = yfs = yfr = xr, \; say \; = c$,  composing with 
+$X \mr{x} B$ yields 
+$$\xymatrix 
+     {
+      C \ar@<.5ex>[rr]^{r}
+        \ar@<-.5ex>[rr]_{s}
+        \ar@/_5pt/[rd]^{c}
+   && X \ar@/^5pt/[ld]_{x}
+  \\ 
+    & B
+     }
+$$ 
+Thus $r$ and $s$ determine arrows in $\cc{C}_{/B}$ such that $fr = fs$, and since $g$ is $f$-compatible in $\cc{C}_{/B}$ it holds $gr = gs$. This shows that $g$ is $f$-compatible in $\cc{C}$. It follows then that there exists a unique $Y \mr{h} Z$ such that $hf = g$ in $\cc{C}$. We have
+$$
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix
+    {
+     X \ar[rr]^f 
+       \ar@{->>}[dr]^g 
+       \ar@/_/[ddr]_{x} 
+  && Y \ar@/^/[ddl]^{y} 
+       \ar[dl]_{h}
+   \\  
+   & Z %\ar@{}[u]|(.6){\equiv} 
+       \ar[d]^(.43){z} 
+   &
+    \\
+   & B    
+   &
+   }
+$$
+It remains to see that $h$ is an arrow in $\cc{C}_{/B}$, that is, 
+$zh = y$. But $zhf = zg =x =yf$, and since $f$ is in particular an epimorphism, this shows what we want.
+\end{proof}
+
+
+
+\begin{proposition}\label{slice have factorization}
+For any arrow  
+\mbox{$(X \mr{x} B) \mr{f} (Y \mr{y} B)$} in $\cc{C}_{/B}$, a strict factorization of $f$ in $\cc{C}$ determines a strict factorization of $f$ in 
+$\cc{C}_{/B}$. Thus if every arrow in $\cc{C}$ admits a strict factorization, so does every arrow in $\cc{C}_{/\Bi}$.
+\end{proposition}
+\begin{proof} 
+Let $(X \mr{x} B) \mr{f} (Y \mr{y} B)$ be an arrow in 
+$\cc{C}_{/B}$, and 
+take a strict factorization of $f$ in $\cc{C}$:
+%
+$$
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix
+    {
+     X \ar[rr]^f \ar@{->>}[dr]_e 
+       \ar@/_/[ddr]_{x} && Y \ar@/^/[ddl]^{y} 
+   \\  
+   & Z \ar@{(>->}[ur]_m 
+       \ar@{}[u]|(.6){\equiv} 
+       \ar@{-->}[d]^(.43){z} 
+   &
+    \\
+   & B    
+   &	          }
+$$ 
+% 
+Since $x$ is $e$-compatible, there is a unique arrow 
+$Z \mr{z} B$ such that $ze = x$. Since $e$ is epic it follows that $ym = z$. By \ref{reflects} $e$ is an strict epimorphism in  $\cc{C}_{/B}$, and by \ref{p-pulback} $m$ is a monomorphism in  $\cc{C}_{/B}$. 
+\end{proof}
+
+%\begin{observation}
+%If every morphism in $\cc{C}$ has a distinguished strict factorization, then so does every morphism in $\cc{C}_{/\Bi}$ and $\Sigma$ preserves them.
+%\end{observation}
+
+%{\eazul
+\begin{proposition} \label{universal}
+Strict epimorphisms are universal in $\cc{C}_{/\Bi}$.
+\end{proposition}
+\begin{proof}
+It follows from the fact that the functor $\Sigma$ preserves and reflects pullbacks and strict epimorphism, \ref{p-pulback},   
+\ref{preserves}, \ref{reflects}.       
+\end{proof}
+
+\vspace{1ex}
+
+Propositions \ref{finitelycomplete},  \ref{slice have factorization} and
+ \ref{universal} put together show:
+
+\begin{proposition} \label{sliceregular}
+If $\cc{C}$ is regular, then $\cc{C}_{/\Bi}$ is regular. \cqd
+\end{proposition}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%% COMENTARIO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+In this section we will establish some generalities on the collective behaviour that a family of functors may have. We will prove that for a regular category $\cc{C}$,  a \textit{monic-conservative} family of regular functors is faithful and conservative.
+
+ Let $\mathcal{F}$ be a family of functors with common domain $\cc{C}$.
+
+\begin{definition}
+We will say that pullbacks (pushouts,...) are \textbf{preserved} by $\cc{F}$ if for every $F \in \cc{F}$ the functor $F$ preserves pullbacks (pushouts,...).
+\end{definition}
+
+\begin{definition}
+We will say that monomorphisms (epimorphisms,...) are \textbf{reflected} by $\cc{F}$ if for every arrow ${X\mr{u}}Y \in \mathcal{C}$ such that for every $F \in \cc{F}$  its image $Fu$ is a monomorphism (epimorphism,...), it follows that $u$ is a monomorphism (epimorphism,...).
+\end{definition}
+
+
+\begin{definition}
+$\cc{F}$ is \textbf{conservative} if $\cc{F}$ reflects isomorphisms.
+\end{definition}
+
+\begin{definition}
+$\cc{F}$ is \textbf{monic} (\textbf{epic})\textbf{-conservative} if for every monic (epic) ${{X \mr{u} Y}  \in \mathcal{C}}$ such that for every $F \in \cc{F}$ its image $Fu$ is an isomorphism, it follows that $u$ is an isomorphism.  
+ \end{definition}
+
+
+\begin{observation}
+A conservative family is monic (epic)-conservative. 
+\end{observation}
+
+\begin{definition}
+$\cc{F}$ is \textbf{faithful} if for every pair ${X\mrpair{u}{v}Y} \in \cc{C}$ such that for every $ F\in \cc{F}$ their images are  equal ($Fu=Fv$), it follows that $u=v$.
+ \end{definition}
+
+
+\begin{lemma}\label{si fiel, refleja monos}
+If $\cc{F}$ is faithful, then $\cc{F}$ reflects monics(epics). 
+\end{lemma}
+
+\begin{proof}
+Let $X \mr{u} Y$ in $\cc{C}$ be such that for every $F\in\cc{F}$, $Fu$ is monic. Suppose we have $A \mrpair{x}{y} X$ such that $ux=uy $. Then for every $F\in\cc{F}$, $Fu \cdot Fx=Fu \cdot Fy$ and since $Fu$ is monic, it follows that for every $F\in\cc{F}$, $Fx=Fy$. Thus $x=y$. The dual proposition follows.
+\end{proof}
+
+\begin{lemma}\label{con pullback reflejo monos}
+If $\cc{C}$ has pullbacks (pushouts), $\cc{F}$ preserves them and $\cc{F}$ is monic (epic)-conservative, then $\cc{F}$ reflects monics (epics). 
+\end{lemma}
+
+\begin{proof}
+Let $X \mr{u} Y$ be such that for every $F \in \cc{F}$, $Fu$ is monic. We will prove that the following diagram is a pullback
+\[
+\xymatrix{X \ar[r]^{id_X} \ar[d]_{id_X} & X \ar[d]^u \\ X \ar[r]_u & Y}
+\]
+
+Take a pullback in $\cc{C}$ and $\delta$ as follows:
+
+%
+%$$  
+%\xymatrix @+3.5ex {X \ar@/_1.5pc/[ddr]_{id_X} \ar@/^/[drr]^{id_X} \ar@{-->}[dr]_{\exists! \delta} & \\ & P \ar@{}[dr]|{p.b.} \ar@<.1ex>@{}[u]|(.36){\equiv} \ar@<.1ex>@{}[l]|(.5){\equiv} \ar[r]^{p_1} \ar[d]_{p_2} & X \ar[d]^u \\ & X \ar[r]_u & Y} 
+%$$
+% 
+$$ 
+\xymatrix @+3.5ex
+     { 
+      X \ar@/_1.5pc/[ddr]_{id_X} 
+        \ar@/^/[drr]^{id_X} 
+        \ar@{-->}[dr]_{\exists! \delta} 
+     & {}
+   \\ 
+     & P \ar@{}[dr]|{p.b.} 
+         \ar@<.1ex>@{}[u]|(.36){\equiv} 
+         \ar@<.1ex>@{}[l]|(.5){\equiv} 
+         \ar[r]^{p_1} 
+         \ar[d]_{p_2} 
+      & X \ar[d]^u 
+     \\ 
+     & X \ar[r]_u 
+     & Y
+     } 
+$$
+ 
+From this diagram we see $\delta$ is monic and for every $F \in \cc{F}$, $F\delta$ is the isomorphism between the corresponding pullback diagrams. Therefore $\delta$ is an isomorphism. The dual proposition follows.
+\end{proof}
+
+\begin{remark}
+The proof of Lemma \ref{con pullback reflejo monos} gives us a technique to prove that under the additional hypothesis of preserving limits (colimits) of a certain type, conservative families reflect limits (colimits) of that type.
+\end{remark}
+
+\begin{proposition}\label{pb + mc implica c}
+If $\cc{C}$ has pullbacks (pushouts), $\cc{F}$ preserves them and $\cc{F}$ is monic (epic)-conservative, then $\cc{F}$ is conservative. 
+\end{proposition}
+
+\begin{proof}
+Observe that monic (epic)-conservative families that reflect monics (epics) are conservative.
+\end{proof}
+
+\begin{proposition}\label{cmc implica cf}
+If $\cc{C}$ has equalizers (coequalizers), $\cc{F}$ preserves them and $\cc{F}$ is monic/strict-monic (epic/strict-epic)-conservative, then $\cc{F}$ is faithful.
+\end{proposition}
+
+\begin{proof}
+Take $X\mrpair{u}{v}Y$ in $\cc{C}$ such that for every $F \in \cc{F}$ their images are equal ($Fu=Fv$). An equalizer $E\mr{e}X$  of $u$ and $v$  is monic and its image $Fe$ is an equalizer of $Fu$ and $Fv$ which are equal, so $Fe$ is an isomorphism. Thus $e$ is an isomorphism and consequently $u=v$. For the strict case we need only note that equalizers are strict monics. The dual propositions follow.
+\end{proof}
+
+\begin{proposition}
+If $\cc{C}$ has equalizers (coequalizers), $\cc{F}$ preserves them and $\cc{F}$ is monic (epic)-conservative, then $\cc{F}$ is conservative.
+\end{proposition}
+
+\begin{proof}
+It follows from Lemma \ref{si fiel, refleja monos} and the observation made in Proposition \ref{pb + mc implica c}.
+\end{proof}
+
+
+\begin{corollary}
+If $\cc{C}$ has equalizers, $\cc{F}$ preserves them and $\cc{F}$ is monic (epic)-conservative, then $\cc{F}$ is conservative and faithfull.
+\end{corollary}
+
+\begin{remark}\label{monic conservative implica conservative}
+If $\cc{C}$ is regular and $\cc{F}$  the set of all regular functors $\cc{C} \mr{} \cc{E}ns$ is monic conservative, it follows that it is conservative and faithful.
+\end{remark}
+
+
+\begin{remark}
+Even under the strictest limit-preserving conditions we will not be able to guarantee that a faithful family is conservative in any sense. Take the following counterexample: Let $\cc{C}=\{0 \mr{u} 1\}$ and take the family whose only member is the functor $\cc{C} \mr{F} \{*\}$. $\cc{C}$ is a regular category that in fact  has all limits and colimits, $F$ is regular and preserves all limits and colimits , $F$ is faithful but nevertheless does not reflect the isomorphism $Fu$.
+\end{remark}
+ 
+\begin{proposition}
+If in $\cc{C}$ every bimorphism (a morphism that is both epic and monic) is an isomorphism and $\cc{F}$ is faithful, then $\cc{F}$ is conservative.
+\end{proposition}
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIN COMENTARIO %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\end{document}
+
+\subsection{Families of Functors With Common Domain} \label{families}
+
+
+In this section we will establish a result, Proposition 
+\ref{pb + mc implica c} below, which is essential (although elementary) for the completeness theorem in this paper.
+
+\vspace{1ex}
+
+%Consider a family $\cc{F}$ of functors with comun domain a category 
+%$\cc{X}$.
+%\begin{proposition} \label{monic-cons ==> cons}
+%For a category $\cc{X}$ with pull-backs, any family $\cc{F}$ of pull-back preserving functors with comun domain $\cc{X}$  which is 
+%\emph{monic-conservative} is \emph{conservative}. 
+%\end{proposition}
+
+Everything in this section is based and contained in 
+\cite{sga4}[Ex I, \S 6], for the convenience of the reader we recall the terminology and extract only the parts that we need.
+
+%We will prove that for a regular category $\cc{C}$,  a \textit{monic-conservative} family of regular functors is faithful and conservative.
+
+ Let $\mathcal{F}$ be a family of functors with common domain $\cc{C}$.
+
+\begin{definitionst} ${}$
+\begin{enumerate} 
+\item $\cc{F}$ \emph{preserves} pullbacks, equalizers, if for every $F \in \cc{F}$ the functor $F$ preserves pullbacks, equalizers, respectively.
+\item $\cc{F}$ \emph{reflects} monomorphisms if for every arrow 
+${X\mr{u}}Y$ such that for every $F \in \cc{F}$  its image $Fu$ is a monomorphism, it follows that $u$ is a monomorphism.
+\item $\cc{F}$ is \emph{conservative} if $\cc{F}$ reflects isomorphisms.
+\item $\cc{F}$ is \emph{monic-conservative} if for every monomorphism ${X \mr{u} Y}$ such that for every $F \in \cc{F}$ its image $Fu$ is an isomorphism, it follows that $u$ is an isomorphism.
+\item 
+$\cc{F}$ is \emph{faithful} if for every pair ${X\mrpair{u}{v}Y}$ such that for every $ F\in \cc{F}$ their images are  equal, $Fu=Fv$, it follows that $u=v$.
+\end{enumerate}
+\end{definitionst}
+
+%\begin{observation}
+%A conservative family is monic-conservative. 
+%\end{observation}
+
+\begin{proposition} \label{reflects + m-cons ==> cons}
+If $\cc{F}$ reflects monomorphisms and is monic-conservative, then it is conservative.
+\end{proposition}
+\begin{proof}
+Let $u$ be such that for every $F\in\cc{F}$, $Fu$ is an isomorphism. Then in particular $u$ is a monomorphism, and so by the first assumption it is a monomorphism, and in turn by the second assumption it is a isomorphism.  
+\end{proof}
+
+We now put a condition that assures us that F reflects monomorphisms.
+
+\begin{proposition}\label{con pullback reflejo monos}
+If $\cc{C}$ has pullbacks, $\cc{F}$ preserves them and $\cc{F}$ is monic-conservative, then $\cc{F}$ reflects monomorphism. 
+\end{proposition}
+
+\begin{proof}
+Let $X \mr{u} Y$ be such that for every $F \in \cc{F}$, $Fu$ is monic. We will prove that the following diagram is a pullback
+\[
+\xymatrix{X \ar[r]^{id_X} \ar[d]_{id_X} & X \ar[d]^u \\ X \ar[r]_u & Y}
+\]
+
+Take a pullback in $\cc{C}$ and $\delta$ as follows:
+
+%
+%$$  
+%\xymatrix @+3.5ex {X \ar@/_1.5pc/[ddr]_{id_X} \ar@/^/[drr]^{id_X} \ar@{-->}[dr]_{\exists! \delta} & \\ & P \ar@{}[dr]|{p.b.} \ar@<.1ex>@{}[u]|(.36){\equiv} \ar@<.1ex>@{}[l]|(.5){\equiv} \ar[r]^{p_1} \ar[d]_{p_2} & X \ar[d]^u \\ & X \ar[r]_u & Y} 
+%$$
+% 
+$$ 
+\xymatrix @+3.5ex
+     { 
+      X \ar@/_1.5pc/[ddr]_{id_X} 
+        \ar@/^/[drr]^{id_X} 
+        \ar@{-->}[dr]_{\exists! \delta} 
+     & {}
+   \\ 
+     & P \ar@{}[dr]|{p.b.} 
+         \ar@<.1ex>@{}[u]|(.36){\equiv} 
+         \ar@<.1ex>@{}[l]|(.5){\equiv} 
+         \ar[r]^{p_1} 
+         \ar[d]_{p_2} 
+      & X \ar[d]^u 
+     \\ 
+     & X \ar[r]_u 
+     & Y
+     } 
+$$
+ 
+From this diagram we see $\delta$ is a monomorphism (since either projection is a section), and for every $F \in \cc{F}$, $F\delta$ is the isomorphism between the corresponding pullback diagrams. Therefore $\delta$ is an isomorphism. \end{proof}
+
+From \ref{reflects + m-cons ==> cons} and \ref{con pullback reflejo monos} it follows:
+\begin{corollary}\label{pb + mc implica c}
+If $\cc{C}$ has pullbacks, $\cc{F}$ preserves them and $\cc{F}$ is 
+monic-conservative, then $\cc{F}$ is conservative. 
+\end{corollary}
+
+
+
+%\begin{remark}\label{monic conservative implica conservative}
+%If $\cc{C}$ is regular and $\cc{F}$  the set of all regular functors $%\cc{C} \mr{} \cc{E}ns$ is monic conservative, it follows that it is conservative and faithful.
+%\end{remark}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% COMENTARIO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{comment}
+\begin{lemma}\label{si fiel, refleja monos}
+If $\cc{F}$ is faithful, then $\cc{F}$ reflects monics(epics). 
+\end{lemma}
+
+\begin{proof}
+Let $X \mr{u} Y$ in $\cc{C}$ be such that for every $F\in\cc{F}$, $Fu$ is monic. Suppose we have $A \mrpair{x}{y} X$ such that $ux=uy $. Then for every $F\in\cc{F}$, $Fu \cdot Fx=Fu \cdot Fy$ and since $Fu$ is monic, it follows that for every $F\in\cc{F}$, $Fx=Fy$. Thus $x=y$. The dual proposition follows.
+\end{proof}
+
+
+\begin{remark}
+The proof of Lemma \ref{con pullback reflejo monos} gives us a technique to prove that under the additional hypothesis of preserving limits (colimits) of a certain type, conservative families reflect limits (colimits) of that type.
+\end{remark}
+
+\begin{proposition}\label{cmc implica cf}
+If $\cc{C}$ has equalizers (coequalizers), $\cc{F}$ preserves them and $\cc{F}$ is monic/strict-monic (epic/strict-epic)-conservative, then $\cc{F}$ is faithful.
+\end{proposition}
+
+\begin{proof}
+Take $X\mrpair{u}{v}Y$ in $\cc{C}$ such that for every $F \in \cc{F}$ their images are equal ($Fu=Fv$). An equalizer $E\mr{e}X$  of $u$ and $v$  is monic and its image $Fe$ is an equalizer of $Fu$ and $Fv$ which are equal, so $Fe$ is an isomorphism. Thus $e$ is an isomorphism and consequently $u=v$. For the strict case we need only note that equalizers are strict monics. The dual propositions follow.
+\end{proof}
+
+\begin{proposition}
+If $\cc{C}$ has equalizers (coequalizers), $\cc{F}$ preserves them and $\cc{F}$ is monic (epic)-conservative, then $\cc{F}$ is conservative.
+\end{proposition}
+
+\begin{proof}
+It follows from Lemma \ref{si fiel, refleja monos} and the observation made in Proposition \ref{pb + mc implica c}.
+\end{proof}
+
+
+\begin{corollary}
+If $\cc{C}$ has equalizers, $\cc{F}$ preserves them and $\cc{F}$ is monic (epic)-conservative, then $\cc{F}$ is conservative and faithfull.
+\end{corollary}
+
+
+
+\begin{remark}
+Even under the strictest limit-preserving conditions we will not be able to guarantee that a faithful family is conservative in any sense. Take the following counterexample: Let $\cc{C}=\{0 \mr{u} 1\}$ and take the family whose only member is the functor $\cc{C} \mr{F} \{*\}$. $\cc{C}$ is a regular category that in fact  has all limits and colimits, $F$ is regular and preserves all limits and colimits , $F$ is faithful but nevertheless does not reflect the isomorphism $Fu$.
+\end{remark}
+ 
+\begin{proposition}
+If in $\cc{C}$ every bimorphism (a morphism that is both epic and monic) is an isomorphism and $\cc{F}$ is faithful, then $\cc{F}$ is conservative.
+\end{proposition}
+
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%% FIN COMENTARIO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,154 @@
+
+
+\section{A Fibration that Creates Sections of 1}
+In this section $\cc{A}$ will represent a regular category that possesses a distinguished terminal object $1$.
+
+\subsection{Construction of a Cofilitered Base for the Fibration}
+
+
+
+Take $\cc{G}lob(\cc{A})$ $\cc{G}s(\cc{A})$ the subcategory of $\cc{A}$ whose objects are those that have global support and morphisms are the strict epimorphisms in $\cc{A}$. Let $[n]=\{0,1,2,...,n-1\}$ denote the finite ordinal. Let $\subC{G}{}$ be the category whose objects are finite sequences $\Bi$ of objects in $\cc{A}$ that have global support and where $B_0=1$. An arrow  ${\Bi \mr{\varphi} \Cj}$ is a function ${ \intnat{m} \mr{\varphi} \intnat{n}}$ that verifies ${\varphi(0)=0}$ and for every $j \in [m]$, ${C_j=B_{\varphi(j)}}$. This is a cofiltered category that will serve us as the base of the fibration we wish to construct. 
+
+Consider the functor $\subC{G}{} \mr{D} \textbf{Cat}$ that associates to each object $\Bi$ the multislice category $\cc{A}_{/\Bi}$ and to each arrow ${\Bi \mr{\varphi} \Cj}$ the functor ${\cc{A}_{/\Bi} \mr{D\varphi} \cc{A}_{/\Cj}}$ that is defined as ${(D\varphi)\{X \mr{x_i} B_i\}_{i \in [n]}=\{X \mr{x_{\varphi(j)}} C_j\}_{j \in [m]}}$ on objects and is the identity on arrows.
+
+\begin{remark}\label{obtuvimos una cofibracion}
+This yields a split cofibration ${\subC{E}{} \mr{F_{\cc{A}}} \subC{G}{}}$ whose fiber over $\Bi$ is isomorphic to the category category $\cc{A}_{/\Bi}$. The following construction is dual to the construction of the fibration  associated to a functor ${\Gamma^{op} \mr{F} \textbf{Cat}}$ (tesis emi, remark 5.7 pagina 36). 
+
+Take $\subC{E}{}$ the category whose objects are ordered pairs $(X,\alpha)$  where ${\alpha \in \subC{G}{}}$ and $X \in D\alpha$. Its arrows are ordered pairs ${(X,\alpha) \mr{(f,\varphi)} (Y,\beta)}$ where $\alpha \mr{\varphi} \beta \in \subC{G}{}$ and $(D\varphi)X \mr{f} Y$. Composition is defined for ${(Y,\beta) \mr{(g,\psi)} (Z,\gamma)}$ as $(g,\psi)(f,\varphi)=(g((D\psi) f),\psi\varphi)$. Let $F_{\cc{A}}$ be the projection in the second coordinate. It is immediate that the arrow ${(X,\alpha)\mr{(1_{(D\varphi)X},\varphi)}((D\varphi)X,\beta)}$ is cocartesian over $\varphi$ and that these arrows are closed under composition. The projection in the first coordinate restricted to a fiber ${(\subC{E}{})_\alpha \mr{\pi_1} D\alpha}$ is an isomorphism.
+\end{remark}
+
+\begin{proposition}\label{obtuvimos una fibracion}
+$F_{\cc{A}}$ is a fibration.
+\end{proposition}
+
+\begin{proof}
+It suffices to prove that over each $\Bi \mr{\varphi} \Cj$ and every $\{Y \mr{y_j} C_j\}_{j \in [m]}$ there is a cartesian morphism in $\subC{E}{}$ over $\varphi$ whose target is $\{Y \mr{y_j} C_j\}_{j \in [m]}$ \tc{red}{ref}. Let $\cc{D}_{\varphi}$ be the graph with objects $[n+1]$ and arrows $[m]$. The arrow $j \in [m]$ has source $n$ and target $\varphi(j)$. The object $\{Y \mr{y_j} C_j\}_{j \in [m]}$ induces a functor ${\cc{D}_{\varphi} \mr{\tilde{Y}} \cc{A}}$ defined as $\tilde{Y}n=Y$, for any other $i \in [n]$ as $\tilde{Y}i=B_i$ and on arrows $\tilde{Y}j=y_j$.
+
+ A cone for this functor is a family of arrows ${\{X \mr{x_i} \tilde{Y}i\}_{i \in [n+1]}}$ such that for every ${j\in[m]}$ the following diagram is commutative.
+ 
+\[
+\xymatrix{& X \ar[dl]_{x_n} \ar[dr]^{x_{\varphi(j)}} \ar@{}[d]|\equiv \\
+		  Y \ar[rr]_{y_j} && B_{\varphi(j)}}
+\] 
+ 
+It is equivalent to give a morphism ${\{X \mr{x_i} \tilde{Y}i\}_{i \in [n]} \mr{(x_n,\varphi)} \{Y \mr{y_j} C_j\}_{j \in [m]}}$. A limit cone corresponds to a cartesian morphism. The result follows.
+\end{proof}
+
+\begin{proposition}
+Finite limits are stable in the fibration $F_{\cc{A}}$.
+\end{proposition}
+
+\begin{proof}
+It follows from Remark \ref{obtuvimos una cofibracion}, Proposition \ref{obtuvimos una fibracion} and Theorem \tc{red}{ref}
+\end{proof}
+
+\begin{lemma}\label{pullbacks along phi are pullbacks in C}
+In $\subC{E}{}$ if
+
+\[
+\xymatrix{ \{W \mr{w_i} B_i\}_{i \in [n]} \ar[r]^{(f,\varphi)} \ar[d]_{(a,1)} \ar@{}[dr]|{\equiv} & \{X \mr{x_j} C_j\}_{j \in [m]} \ar[d]^{(b,1)} \\   
+           \{Z \mr{z_i} B_i\}_{i \in [n]} \ar[r]^{(g,\varphi)} & \{Y \mr{y_j} C_j\}_{j \in [m]} \\
+           \Bi  \ar[r]^\varphi & \Cj
+           }
+\]
+
+
+
+is such that $(f,\varphi)$ and $(g,\varphi)$ are cartesian, then
+
+\[
+\xymatrix{ W \ar[r]^f \ar[d]_a \ar@{}[dr]|{\equiv} & X  \ar[d]^b \\   
+           Z \ar[r]_g & Y}
+\]
+is a pullback in $\cc{A}$.
+
+\end{lemma}
+
+
+\begin{proof}
+For any cone $\{V \mr{h} X, V \mr{c} Z \}$ in $\cc{A}$ we have the object $\{V \mr{z_ic} B_i\}_{i \in [n]}$ together with the cone $\{(c,1),(h,\varphi)\}$. A factorization of the former cone in $\cc{A}$ is identified with a factorization of the latter in $\subC{E}{}$ over $\Bi$. 
+\end{proof}
+
+\begin{proposition}\label{trans pres epics}
+Strict epimorphisms are stable in the fibration $F_{\cc{A}}$.
+\end{proposition}
+
+\begin{proof}
+It follows from Lemma \ref{pullbacks along phi are pullbacks in C} and the fact that the forgetful functor in multislice categories preserves and reflects strict epimorphisms.
+\end{proof}
+
+\begin{corollary}
+$F_{\cc{A}}$ is a regular fibration.
+\end{corollary}
+
+Thus we have a regular fibration where the base is cofiltered.  Theorem (referencia a cap de fibraciones) guarantees that $\subC{E}{}[\Sigma^{-1}]$ is a regular category and $J_{\{1\}}$ is a regular functor.
+
+\[
+\xymatrix{ {\subC{E}{}}_{{\{1\}}}  \ar[dr]_{j_{\{1\}}}  \ar[rr]^{J_{\{1\}}}&& \subC{E}{}[\Sigma^{-1}] \\
+& \subC{E}{} \ar[ur]_Q \ar@{}[u]|\equiv}
+\]
+
+Let $B \in Ob\cc{(C)}$ have global support. Identify $\cc{A}_{/\{1,B\}}$ with $\cc{A}_{/B}$ by not making explicit the unique arrow to 1. Label the unique arrow $B \mr{} 1$ with $\pi$.
+
+\begin{observation}
+For $\{P \mrpair{\pi_1}{\pi_2} B\}$  a product of $B$ with itself in $\cc{A}$ and
+$B \mr{\delta} P$ the diagonal morphism we obtain the following diagram in $\subC{E}{}$.
+
+\[
+\xymatrix{\{P \mr{\pi_2} B\}\ \ar[r]^(.6){(\pi_1,\varphi)} & B  \\
+			\{B \mr{id_B} B \}\ \ar[r]_(.6){(\pi,\varphi)} \ar[u]^{(\delta,1)} & 1 \\
+		  \{1,B\} \ar[r]^\varphi  & \{1\} 	}
+\]
+
+\end{observation}
+
+\begin{lemma}
+$\{B \mr{id_B} B \} \mr{(\pi,\varphi)} 1$ and $\{P \mr{\pi_2} B\} \mr{(\pi_1,\varphi)} B$ are cartesian morphisms.
+\end{lemma}
+
+\begin{proof}
+This follows immediately using the construction of cartesian morphisms in Proposition \ref{obtuvimos una fibracion}. 
+\end{proof}
+
+\begin{proposition}
+There is a canonical morphism $1 \mr{\Delta_B} j_C(B)$ in $\cc{A'}$. 
+\end{proposition}
+
+\begin{proof}
+Using that $(\pi,\varphi)$ is cartesian we take $(\pi_1 \circ \delta,\varphi) \circ (\pi,\varphi)^{-1}$ in $\cc{A'}$. That it is well defined (it does not depend on the choice of product P) follows from the fact that $(\pi_1,\varphi)$ is cartesian.
+\end{proof}
+
+\begin{lemma}\label{esos epis especiales}
+For any ${\Bi \mr{\psi} \{1,B\}}$ in $\cc{G}$, if ${\{X \mr{x_i} B_i\}_{i \in [n]} \mr{(f,\psi)} \{B \mr{id_B} B \}}$ is cartesian, then $f$ is a strict epimorphism in $\cc{A}$.
+\end{lemma}
+
+\begin{proof}
+Note that  $\{X \mr{x_i} B_i\}_{i \in [n]}$ is a product of the family $\Bi$ and that $f$ is in fact one of the projections.
+\end{proof}
+
+\begin{theorem}
+If $A \mnr{m} B$  in $\cc{A}$ is such that 
+\[
+\xymatrix{j_C(A)\ \ar@{>->}[rr]^{j_C(m)} & & j_C(B) \\ & & 1 \ar[u]_{\Delta_B} \ar@{.>}[ull]^{\exists} \ar@{}[ul]|(.6){\equiv}}\ \ ,
+\]
+then $m$ is an isomorphism.
+\end{theorem}
+
+\begin{proof}
+In our context, that in which we calculate the colimit of a fibration as a category of fractions, the existence of such a lifting of $\Delta_B$ reduces to there being a morphism ${\Bi \mr{\psi} \{1,B\}}$ in $\subC{G}{}$, a cartesian morphism ${\{X \mr{x_i} B_i\}_{i \in [n]} \mr{(f,\psi)} \{B \mr{id_B} B \}}$ and a morphism ${\{X \mr{x_i} B_i\}_{i \in [n]} \mr{(g,\varphi \circ	\psi)} A}$ such that the following diagram is commutative.
+
+\[
+\xymatrix{                   &      & {}^{\Huge A} \ar@{>->}[d]^m  \\                                                                                   
+			                 &       \{P \mr{\pi_2} B\}\ \ar[r]^(.6){(\pi_1,\varphi)}           & B  \\
+\{X \mr{x_i} B_i\}_{i \in [n]} \ar[r]^{(f,\psi)} \ar@/^3pc/[uurr]^{(g,\varphi \circ	\psi)} & \{B \mr{id_B} B \}\ \ar[r]_(.6){(\pi,\varphi)} \ar[u]^{(\delta,1)} & 1\\
+\Bi \ar[r]^\psi  & \{1,B\} \ar[r]^\varphi & \{1\}  }
+\]
+
+It follows that  $m  g=f$ and together with Lemma \ref{esos epis especiales} $m$ must be an isomorphism. 
+
+
+\end{proof}
+
+\begin{corollary}
+$j_C$ is conservative over monics with globally supported codomain.
+\end{corollary}

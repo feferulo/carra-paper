@@ -1,0 +1,88 @@
+
+DEFINICION DE REGULAR CATEGORY
+
+
+
+Recall that a  \emph{regular category} is a category with finite
+limits and such that any arrow can be factorized into a monomorphism
+composed with an  strict epimorphism, and in addition strict
+epimorphisms  are universal. In a regular category strict epimorphisms
+are  the same that regular epimorphisms, and strict epimorphisms
+compose  \cite{B}, \cite{G}. We introduce now a notion which corresponds to
+the  notion of regular category, but utilizing strict epimorphic
+families  instead of single strict epimorphisms. This notion is not
+elementary and it means a (co) completeness requirement. We call this notion
+\emph{f-regular}, \emph{f} for family. 
+
+
+\begin{definition}[properties of collections] \label{familyproperties}
+$ $   
+ \vspace{1ex}
+ 
+(I) \emph{Isomorphisms}:  $\cc{I}so \,\subseteq \, \cc{A}.$ 
+
+\vspace{1ex}
+
+(C) \emph{Closed under composition}: 
+                            $\cc{A} \circ \cc{A} \,\subseteq\, \cc{A}.$
+
+\vspace{1ex}
+
+(S) \emph{Saturated}: $s \cc{A} \,\subseteq\, \cc{A}$ (hence $\cc{A}=s \cc{A}$).
+
+\vspace{1ex}
+
+(U) \emph{Universal}: Given $X_\alpha \to X \, \in \cc{A}$ and $Y \to X$, there exists an r-pull-back $Y_\lambda \to Y \, \in \cc{A}$:
+$$
+\xymatrix@R=15pt@C=20pt
+        {
+         Y_{\lambda} \ar[r] \ar[d] 
+        & X_{\alpha_{\lambda}} \ar[d]
+        \\
+        Y \ar[r] 
+        & X
+        }
+$$
+
+\vspace{1ex}
+
+If  a collection $\cc{A}$ satisfies (S), and the category has finite limits, then (U) is 
+equivalent to:
+
+\vspace{1ex}
+
+(U) \emph{Stable under pullback}: $\pi\cc{A} \subseteq \cc{A}$ (hence
+$\cc{A}=\pi \cc{A}$).
+
+\vspace{1ex}
+
+(F) \emph{Filtered}: Given 
+$X_{\alpha}\to X \, \in \, \cc{A}_X,\;  Y_{\beta}\to X \, \in \,
+  \cc{A}_X$, there exists a common refinement 
+$Z_{\lambda}\to X \; \in \; \cc{A}_X$:  
+$$
+\xymatrix@R=15pt@C=20pt
+         {
+             Z_{\lambda}  \ar[d]  \ar[r] \ar[rd]
+            &  X_{\alpha_{\lambda}} \ar[d] 
+          \\
+          Y_{\beta_{\lambda}} \ar[r]  &  X 
+         }
+$$ 
+\end{definition}
+
+
+STRICT EPIMORPHISM.   SGA4 \cite[I, 10.3, p. 180]
+
+The situation is described in the following diagram, where the 
+family $g_{\alpha}$ is compatible with the family $f_{\alpha}$:
+$$        
+\xymatrix@1
+        {
+         X_{\alpha}\;\; \ar @<+2pt> `u[r] `[rr]^{g_{\alpha}} [rr]
+                                             \ar[r]^{f_{\alpha}} 
+         & \;\;X\;\;  \ar@{-->}[r]^{\exists ! g} 
+         & \;\;Y      
+        }
+$$
+

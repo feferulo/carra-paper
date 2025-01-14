@@ -1,0 +1,36 @@
+\subsection{Weakly Projective Objects}
+Here we give a characterization of which hom-functors of a regular category $\cc{A}$ are regular functors.
+
+\begin{observation}
+A hom-functor  $hom_{\cc{A}}(A,-)$ always preserves limits but doesn't necessarily preserve strict epimorphisms. 
+\end{observation}
+
+
+\begin{definition}
+An object $A$ in a regular category $\cc{A}$ is \textbf{weakly projective} if the functor $\cc{A} \mr{hom_{\cc{A}}(A,-)} \cc{E}ns$ preserves strict epimorphisms.
+\end{definition}
+
+\begin{remark}
+$A$ is weakly projective if and only if given any strict epimorphism $\xymatrix{X \ar@{->>}[r]^{u} &  Y}$  it follows that
+
+\[
+\xymatrix{X \ar@{->>}[rr]^{u} & & Y \\ & & A \ar[u]_{\forall t} \ar@/^/@{.>}[ull]^{\exists} \ar@{}[ul]|(.6){\equiv}}
+\]
+
+We call such a dotted arrow a \textit{lift} of $t$ along $u$.
+\end{remark}
+
+
+\begin{lemma}
+$A$ is weakly projective if and only if every strict epimorphism $\xymatrix{X \ar@{->>}[r]^{u} & A}$ admits a section.
+\end{lemma}
+
+\begin{proof}
+If $A$ is weakly projective, a lift of $1_A$ along the given strict epimorphism yields a section. For the converse let $\xymatrix{X \ar@{->>}[r]^{u} & Y}$ be a strict epimorphism. For a given $A \mr{t} Y$ take a pullback of $u$ along $t$.
+
+\[
+\xymatrix{X \ar@{->>}[r]^{u} \ar@{}[rd]|{p.b.} & Y \\ P \ar@{.>}[u]^{p_1} \ar@{.>}[r]_{p_2} & A \ar[u]_t}
+\]
+
+Since $p_2$ is a strict epimorphism it admits a section $v$. The morphism $p_1v$ is a lift of $t$ along $u$.
+\end{proof} 

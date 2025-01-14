@@ -1,0 +1,151 @@
+
+\section{REDUCTIONS}\label{reduction}
+
+
+\subsection{A Regular Functor That is Conservative Over Monics With Globally Supported Codomain Suffices} \label{gamma sub S}
+
+In this section we will prove that by making the following assumption on our category $\cc{C}$ we will obtain  the \textit{Sufficient Points} theorem if we are able to construct a function that associates to each regular category $\cc{A}$ that possesses a distinguished terminal object, a regular functor $\cc{A} \mr{} \cc{E}ns$ that is conservative over monics with globally supported codomain.
+
+\begin{assumption}\label{rep asumption}
+$\cc{C}$ possesses a distinguished terminal object which we denote with 1, and a distinguished representative for each subobject class in $\cc{C}$. 
+\end{assumption}
+
+
+\begin{remark}
+ This assumption does not affect our desired range of applicability when proving completeness theorems in logic. 
+\end{remark} 
+ 
+ We will denote the distinguished representatives of a subobject class with a curly arrow $\mmr{}$ and for every object $X \in  \cc{C}$ we will choose $X \mmr{1_X} X$ as the distinguished representative of its subobject class. 
+
+\begin{observation}
+For every $X \in \cc{C}$ the slice category $\cc{C}_{/X}$ has the distinguished terminal object ${X \mr{1_X} X}$. Additionally since the domain functor $\cc{C}_{/X} \mr{\Sigma} \cc{C}$ preserves and reflects monics there are distinguished representatives for each subobject class in $\cc{C}_{/X}$. 
+\end{observation}
+
+\begin{definition}
+For  $S \mmr{} 1$ we say  $X \in  \cc{C}$ \textbf{ has support in $S$} if
+\[
+\xymatrix{X \ar[rr] \ar@{-->}[dr]_{\exists} & \ar@{}[d]|(.4){\equiv} & 1 \\ 
+                  & S\ \ar@{^{(}->}[ur] }
+\]
+and that $S\ \textbf{is the support of}\ X$ if the dashed arrow is a strict epimorphism.
+\end{definition}
+
+\begin{observation}
+$X$ is globally supported if and only if $1$ is the support of $X$ (see \ref{globally supported}). 
+\end{observation}
+
+\subsubsection{Pullback functor along a monomorphism}
+
+\begin{proposition}
+For $\xymatrix{A\ \ar@{>->}[r]^m & B}$ there are distinguished pullbacks along $m$.
+\end{proposition}
+
+\begin{proof}
+Pullbacks are well defined on subobject classes. For  $W \mr{w} B$ take a pullback that uses the representative of the corresponding subobject class of $m$ along $w$ and label it $m^*(W) \mmr{} W$.
+
+\[
+\newdir{(>}{{}*!/-6pt/\dir{>}}
+\xymatrix{m^*(W) \ar@{^{(}->}[r] \ar@{-->}[d] & W \ar[d]^w \\
+		   A \ar@{(>->}[r]_m \ar@{}[ur]|{p.b.}  &  B  }
+\]
+
+The dashed arrow is uniquely determined because $m$ is monic. That arrow will be denoted $m^*(w)$. 
+\end{proof}
+
+\begin{remark}\label{adjuncion pullback}
+Having this choice of pullbacks along $m$ determines a functor $ \cc{C}_{/B} \mr{m^*}\cc{C}_{/A}$ which is right adjoint to the functor defined as postcomposing by $m$. Thus it preserves all limits. 
+Since the following diagram is a pullback and the domain functor $\Sigma$ preserves and reflects strict epimorphisms we have that $m^*$ is a regular functor.
+
+
+\begin{align*}
+\xymatrix{m^*(X) \ar@{^{(}->}[r] \ar[d]_{m^*(f)} & X \ar[d]^f \ar@{}[dl]|{p.b.} \\
+		  m^*(Y) \ar@{^{(}->}[r] & Y }
+\end{align*}
+
+\end{remark}
+
+\begin{observation}
+If $A \mmr{m} B$ is a distinguished subobject, we have that $m^*(1_B)=1_A$. That is $m^*$ transforms the distinguished terminal object of $\cc{C}_{/B}$ into the distinguished terminal object in $\cc{C}_{/A}$. If the distinguished subobjects in $\cc{C}$ are closed under composition and from
+ 
+ \[
+ \xymatrix{A\ \ar@{^{(}->}[rr] \ar[dr]_{u} && B
+ \\
+ 		                &  A'\ \ar@{}[u]|(.55)\equiv \ar@{^{(}->}[ru] 
+ 		  }
+ \]
+ it follows that $u$ is a distinguished subobject, then  $m^*$ transforms distinguished subobjects into distinguished subobjects.
+\end{observation}
+
+In the particular case where we take a distinguished subobject of $1$ we will use the following notation. For $S \mmr{} 1$ we have the pullback functor $\cc{C} \mr{S^{\wedge}} \cc{C}_{/S}$ and denote its action as follows.
+
+\[
+S^{\wedge}(X \mr{f} Y)=\xymatrix{{X \wedge S}\  \ar[dr] \ar[rr]^{f \wedge S} && {Y \wedge S} \ar[dl]
+\\
+	&				S  \ar@{}[u]|(.55)\equiv}
+\]
+
+\begin{lemma}\label{sigma con soporte en S }
+If $Y \in \cc{C}$ has support in $S$, then for $X \mr{f} Y$ we have that $Y \wedge S=Y$, $X \wedge S=X$ and $f \wedge S=f$. 
+\end{lemma}
+
+\begin{proof}
+It follows from the fact that for such a $Y$ the following diagram is a pullback.
+
+\[
+\xymatrix{Y\ \ar@{^{(}->}[r]^{1_Y} \ar[d] & Y \ar[d]\\ S\ \ar@{^{(}->}[r]_i & 1 \ar@{}[ul]|{p.b.} }
+\]
+and that $X$ has support in $S$ as well.
+\end{proof}
+
+\begin{corollary}
+ $S^{\wedge}(S)$  is a terminal object in $\cc{C}_{/S}$ and $S^{\wedge}$ is conservative over morphisms whose target has support in  $S$.
+\end{corollary}
+
+\begin{proof}
+In fact $S^{\wedge}(S)=1_S$.
+\end{proof}
+
+
+\subsubsection{The result}
+
+\begin{theorem}
+If for every $S \mmr{} 1 $ we are given a regular functor $\cc{C}_{/S} \mr{\Gamma_{S}} \cc{E}ns$ that is conservative over monics with globally supported codomain, then the family of regular functors of $\cc{C} \mr{} \cc{E}ns$ is monic-conservative.
+\end{theorem}
+
+\begin{proof}
+Consider the following family  of regular functors of $\cc{C} \mr{} \cc{E}ns$.
+\[
+\cc{C} \mr{S^{\wedge}} \cc{C}_{/S} \mr{\Gamma_{S}} \cc{E}ns
+\]
+
+
+It is a family of functors $\{h_S\}$ indexed by the set $Sub(1)$ of subobject classes of 1. It suffices to prove that this family is monic-conservative. Let $X \mnr{f} Y$ in $\cc{C}$  be such that its image through all these functors is an isomorphism. Take $S$ the support of $Y$. It is enough to prove that $f \wedge S$ is an isomorphism. But this follows from the fact that $f \wedge S$ is monic, $Y \wedge S \mr{} S$ has global support in  $\cc{C}_{/S}$ and $\Gamma_{S}(f \wedge S)$ is an isomorphism.
+\end{proof}
+
+\begin{corollary}
+The family of regular functors of $\cc{C} \mr{} \cc{E}ns$ is conservative.
+\end{corollary}
+
+\begin{proof}
+It follows from Theorem \ref{obtuvimos un modelo loco} and the Remark \ref{monic conservative implica conservative}.
+\end{proof}
+
+\subsection{From a Family $\{h_S\}$ to $h$} \label{from family to h}
+Consider the following general construction for a family of set-valued functors $\{h_i\}_{i \in I}$ with common domain $\cc{C}$. Let $\cc{I}$ denote the category whose object set is $I$ and for $i,j \in I$ we define $hom_{\cc{I}}(i,j)=Nat(h_i,h_j)$ with composition defined naturally. Let $\cc{C} \mr{h} \cc{E}ns^{\cc{I}}$ denote de functor defined as 
+$h(C)(i)=h_i(C)$. 
+
+
+\begin{remark}
+This asignment is functorial  in both variables. We have the following commutative diagram for every $i \in I$.
+
+\begin{align*}
+\xymatrix @+2ex {\cc{C} \ar [rr] ^{h}  \ar [dr] _{h_i}  &&  \cc{E}ns^{\cc{I}}  \ar [dl] ^{ev_i}    \\
+				 &  \cc{E}ns  \ar @{} [u] |(.6){\equiv} }
+\end{align*}
+
+\noindent Given the pointwise structure of the regular category $\cc{E}ns^{\cc{I}}$ we have that $h$ preserves finite limits if and only if for every $i \in I$ the functors $h_i$ preserve finite limits, $h$ preserves strict epimorphisms if and only  if for every $i \in I$ the functors $h_i$ preserve strict epimorphisms and $h$ is conservative if and only if $\{h_i\}_{i \in I}$ is a conservative family as in \ref{families}.
+
+\end{remark}
+
+
+In our particular case  we have constructed a conservative family of regular functors ${\{\cc{C} \mr{h_S} \cc{E}ns\}}_{S \in Sub(1)}$. Using the previous construction we give   $Sub(1)$ a structure and obtain a regular conservative functor ${\cc{C} \mr{h} \cc{E}ns^{Sub(1)}}$. The End.
